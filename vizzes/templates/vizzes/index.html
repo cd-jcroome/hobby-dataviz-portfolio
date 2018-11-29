@@ -1,0 +1,13 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'vizzes/style.css' %}">
+<div class="header"><p>_?_Viz</p></div>
+<div class="body">
+    <h1>Here are the Vizzes</h1>
+        <ul>
+        {% for dataviz in latest_viz_list %}
+            <li><a href="{% url 'vizzes:viz' dataviz.viz_id %}">{{dataviz.viz_id}} | {{dataviz.viz_verbose_name}}</a></li>
+        {% endfor %}
+            <li><a href="admin/">Admin</a></li>
+        </ul>
+</div>
+<div class="footer"><p>footie</p></div>

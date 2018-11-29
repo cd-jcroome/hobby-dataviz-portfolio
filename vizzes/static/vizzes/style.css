@@ -1,0 +1,96 @@
+@media (min-width: 600px){
+  .wrapper {
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+      grid-template-columns: 15vw 70vw 15vw;
+      grid-template-rows: 7vh 86vh 7vh;
+  }
+  
+  .header {
+    grid-column: 1 / 4;
+    grid-row: 1 / 2;
+    background: white;
+    position: fixed;
+    color: darkslategray;
+    opacity: 50;
+    position: fixed;
+    display: grid;
+      grid-template-columns: 15vw 70vw 15vw;
+      grid-template-rows: 2vh 5vh 0vh;
+  }
+
+  .header.title p {
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+
+  .header.vizName p {
+    grid-column: 2/3;
+    grid-row: 2/3;
+  }
+
+  div.detail_main {
+    grid-row: 1/4;
+    grid-row: 2/3;
+  }
+
+  div.footer {
+    display: grid;
+    grid-column: 1/4;
+    grid-row: 3/4;
+    background: white;
+
+  }
+
+  .body {
+
+  }
+  .mainviz{
+    width: 100vw;
+    height: 60vh;
+    background: whitesmoke;
+  }
+  div.tooltip {	
+    position: absolute;			
+    text-align: center;			
+    width: 60px;					
+    height: 28px;					
+    padding: 2px;				
+    font: 12px sans-serif;		
+    background: lightsteelblue;	
+    border: 0px;		
+    border-radius: 8px;			
+    pointer-events: none;			
+  }
+  .vizText {
+    width: 98vw;
+  }
+
+  .axis {
+    font: 10px sans-serif;
+  }
+
+  .axis path,
+  .axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+  }
+  /* 0001 - women in congress */
+  circle {
+    stroke: white;
+    stroke-width: .1vw;
+    opacity: .5;
+  }
+  .totalCongress {
+    stroke: peru;
+    stroke-width: .2vh;
+  }
+  .dem {
+    fill: navy;
+  }
+  .rep {
+    fill: darkred;
+  }
+}
