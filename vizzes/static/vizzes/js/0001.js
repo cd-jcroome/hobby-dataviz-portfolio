@@ -10,25 +10,33 @@ var svg = d3.select(".mainviz").append("svg")
 var chartGroup = svg.append("g")
 	.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-var y = d3.scaleLinear()
-	.domain([0,.5])
-	.range([mainheight, 0]);
-
-var yAxis = d3.axisLeft(y);
-
 d3.json("VizData").then(function (data) {
+
+	var y = d3.scaleLinear()
+	.domain([0,d3.max(data,function(d){return d.women_total;})])
+	.range([mainheight, 0]);
 
 	var x = d3.scaleBand()
 	.domain(data.map(function(d){ return d.years;}))
 	.range([0, mainwidth])
 	.paddingInner(.05)
 
+	var yAxis = d3.axisLeft(y);
+
 	var xAxis = d3.axisBottom(x).ticks(10)
 
 	var line = d3.line()
 	.x(function(d){ return x(d.years) ;})
-	.y(function(d){ return y(d.women_total/(d.total_dems+d.total_reps)) })
-	.curve(d3.curveStepAfter);
+	.y(function(d){ return y(d.women_total); })
+	.curve(d3.curveNatural);
+
+	var stack = d3.stack()
+					.keys("republican","democratic")
+					.order(d3.stackOrderNone)
+					.offset(d3.stackOffsetNone);
+	var datastack = stack([[data.republican],[data.democratic]]);
+
+	console.log(datastack);
 
 	chartGroup.append("path")
 		.attr("d",line(data))
@@ -40,16 +48,17 @@ d3.json("VizData").then(function (data) {
 		.enter().append("circle")
 		.attr("class","rep")
 		.attr("cx",function(d){return x(d.years);})
-		.attr("cy",function(d){return y(d.of_party_rep);})
-		.attr("r", (mainwidth/(104)))
+		.attr("cy",function(d){return y(d.republican);})
+		.attr("r", (mainwidth/(208)))
+
 
 	chartGroup.selectAll("circle.dem")
 		.data(data)
 		.enter().append("circle")
 		.attr("class","dem")
 		.attr("cx",function(d){return x(d.years);})
-		.attr("cy",function(d){return y(d.of_party_dem);})
-		.attr("r", (mainwidth/(104)))
+		.attr("cy",function(d){return y(d.democratic);})
+		.attr("r", (mainwidth/(208)))
 
 	chartGroup.append("g")
 		.attr("class","axis y")

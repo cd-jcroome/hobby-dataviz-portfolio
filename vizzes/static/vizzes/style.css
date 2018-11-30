@@ -1,40 +1,56 @@
 @media (min-width: 600px){
   .wrapper {
+    top: 0;
+    left: 0;
     height: 100vh;
-    width: 100vw;
+    width: 98vw;
     display: grid;
-      grid-template-columns: 15vw 70vw 15vw;
-      grid-template-rows: 7vh 86vh 7vh;
+      grid-template-columns: 14vw 70vw 14vw;
+      grid-template-rows: 4vh 94vh 2vh;
   }
   
   .header {
+    top: 0px;
+    left: 0px;
     grid-column: 1 / 4;
     grid-row: 1 / 2;
     background: white;
     position: fixed;
     color: darkslategray;
-    opacity: 50;
+    opacity: .90;
     position: fixed;
     display: grid;
       grid-template-columns: 15vw 70vw 15vw;
-      grid-template-rows: 2vh 5vh 0vh;
+    -webkit-box-shadow: 0 3px 2px rgba(57, 63, 72, 0.3);
+    -moz-box-shadow: 0 3px 2px rgba(57, 63, 72, 0.3);
+    box-shadow: 0 3px 2px rgba(57, 63, 72, 0.3);
   }
 
-  .header.title p {
+  .header p.title {
     grid-column: 1/2;
-    grid-row: 2/3;
+    text-align: center;
   }
 
-  .header.vizName p {
+  .header p.vizName {
     grid-column: 2/3;
+    text-align: center
+  }
+  .headerlink {
+    grid-column: 3/4;
+    height: 4vh;
+  }
+
+  div.detail_main, div.index-main {
+    top: 4px;
+    grid-column: 1/4;
     grid-row: 2/3;
   }
 
-  div.detail_main {
-    grid-row: 1/4;
-    grid-row: 2/3;
+  .mainviz{
+    width: 98vw;
+    height: 60vh;
+    background: whitesmoke;
   }
-
   div.footer {
     display: grid;
     grid-column: 1/4;
@@ -42,31 +58,14 @@
     background: white;
 
   }
-
-  .body {
-
-  }
-  .mainviz{
-    width: 100vw;
-    height: 60vh;
-    background: whitesmoke;
-  }
-  div.tooltip {	
-    position: absolute;			
-    text-align: center;			
-    width: 60px;					
-    height: 28px;					
-    padding: 2px;				
-    font: 12px sans-serif;		
-    background: lightsteelblue;	
-    border: 0px;		
-    border-radius: 8px;			
-    pointer-events: none;			
+  div.footer p {
+    text-align: center;
   }
   .vizText {
     width: 98vw;
   }
 
+  /* 0001 - women in congress */
   .axis {
     font: 10px sans-serif;
   }
@@ -77,7 +76,6 @@
     stroke: #000;
     shape-rendering: crispEdges;
   }
-  /* 0001 - women in congress */
   circle {
     stroke: white;
     stroke-width: .1vw;
