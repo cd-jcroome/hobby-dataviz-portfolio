@@ -9,7 +9,7 @@
     </header>
     <div class="index-main">
         <ul> {% for dataviz in latest_viz_list %}
-            <li><a href="{% url 'vizzes:viz' dataviz.viz_id %}">{{dataviz.viz_id}} | {{dataviz.viz_verbose_name}}</a></li>
+            <li><a href="{% url 'vizzes:viz' dataviz.viz_id %}"><img class="vizThumb" src="{{dataviz.viz_thumb.url}}"> | {{dataviz.viz_id}} | {{dataviz.viz_verbose_name}}</a></li>
             <p>{{dataviz.viz_description}}</p>
         {% endfor %} </ul> 
     </div>

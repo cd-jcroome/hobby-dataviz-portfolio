@@ -15,8 +15,9 @@
                | <a href="{{ selected_dataviz.viz_source }}"target="_blank">data source</a>
                | 
           </p>
-          <script src="https://d3js.org/d3.v5.min.js"></script>
+          <script src="{% static 'vizzes/js/d3.v5.min.js' %}"></script>
           <script type="text/javascript" src="/static/vizzes/js/{{ selected_dataviz.viz_id }}.js"></script>
+          
      </div>
      <div class="footer"><p>footie</p></div>
 </div>

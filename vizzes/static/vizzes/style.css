@@ -46,6 +46,10 @@
     grid-row: 2/3;
   }
 
+  img.vizThumb{
+    width: 25vw;
+  }
+
   .mainviz{
     width: 98vw;
     height: 60vh;

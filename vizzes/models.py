@@ -11,6 +11,7 @@ class Dataviz(models.Model):
     date_added = models.DateTimeField('Date Added')
     viz_description = models.TextField(default='A brief Description of the Viz')
     viz_source = models.URLField(default='Viz Source')
+    viz_thumb = models.ImageField(upload_to='images/')
 
     class Meta:
         """Meta definition for Dataviz."""
@@ -33,5 +34,9 @@ class women_congress(models.Model):
     democratic = models.IntegerField()
     of_women_dem = models.FloatField(default='')
     of_party_dem = models.FloatField(default='')
+    
     class Meta:
         verbose_name_plural: 'women_congress'
+
+    def __str__(self):
+        return self.years + ' | ' + self.congress + ' congress'
