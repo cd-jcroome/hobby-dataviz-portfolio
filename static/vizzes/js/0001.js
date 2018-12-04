@@ -31,10 +31,10 @@ d3.json("VizData").then(function (data) {
 	.curve(d3.curveNatural);
 
 	var stack = d3.stack()
-					.keys("republican","democratic")
+					.keys(["republican","democratic"])
 					.order(d3.stackOrderNone)
 					.offset(d3.stackOffsetNone);
-	var datastack = stack([[data.republican],[data.democratic]]);
+	var datastack = stack(data);
 
 	console.log(datastack);
 

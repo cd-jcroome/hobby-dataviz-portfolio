@@ -11,9 +11,9 @@
         {% for dataviz in latest_viz_list %}
             <div class="vizCard">
                 <a href="{% url 'vizzes:viz' dataviz.viz_id %}">
-                    <img class="vizThumb" src="{{dataviz.viz_thumb.url}}">{{dataviz.viz_id}} | {{dataviz.viz_verbose_name}}
+                    <img class="vizThumb" src="{{dataviz.viz_thumb.url}}">
                 </a>
-                <p class="vizDesc">{{dataviz.viz_description}}</p>
+                <p class="vizTitle">{{dataviz.viz_id}} | {{dataviz.viz_verbose_name}}</p>
             </div>
         {% endfor %} </ul> 
     </div>
