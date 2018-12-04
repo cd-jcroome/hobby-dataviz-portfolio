@@ -8,9 +8,13 @@
         <p class="title">VizLab</p> <a class="headerlink" href="admin/">Admin</a>
     </header>
     <div class="index-main">
-        <ul> {% for dataviz in latest_viz_list %}
-            <li><a href="{% url 'vizzes:viz' dataviz.viz_id %}"><img class="vizThumb" src="{{dataviz.viz_thumb.url}}"> | {{dataviz.viz_id}} | {{dataviz.viz_verbose_name}}</a></li>
-            <p>{{dataviz.viz_description}}</p>
+        {% for dataviz in latest_viz_list %}
+            <div class="vizCard">
+                <a href="{% url 'vizzes:viz' dataviz.viz_id %}">
+                    <img class="vizThumb" src="{{dataviz.viz_thumb.url}}">{{dataviz.viz_id}} | {{dataviz.viz_verbose_name}}
+                </a>
+                <p class="vizDesc">{{dataviz.viz_description}}</p>
+            </div>
         {% endfor %} </ul> 
     </div>
     <div class="footer"><p></p></div>
