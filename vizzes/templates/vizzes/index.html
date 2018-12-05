@@ -3,6 +3,7 @@
 <title>VizLab</title>
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'vizzes/style.css' %}">
+<link href="https://fonts.googleapis.com/css?family=Alegreya" rel="stylesheet">
 <div class="wrapper">
     <header class="header">
         <p class="title">VizLab</p> <a class="headerlink" href="admin/">Admin</a>
@@ -14,7 +15,6 @@
                     <img class="vizThumb" src="{{dataviz.viz_thumb.url}}">
                     <div class="vizDesc">
                         <h3>{{dataviz.viz_verbose_name}}</h3>
-                        <p>{{dataviz.viz_description}}</p>
                     </div>
                 </a>
             </div>
