@@ -10,10 +10,13 @@
     <div class="index-main">
         {% for dataviz in latest_viz_list %}
             <div class="vizCard">
-                <a href="{% url 'vizzes:viz' dataviz.viz_id %}">
+                <a class="vizLink" href="{% url 'vizzes:viz' dataviz.viz_id %}">
                     <img class="vizThumb" src="{{dataviz.viz_thumb.url}}">
+                    <div class="vizDesc">
+                        <h3>{{dataviz.viz_verbose_name}}</h3>
+                        <p>{{dataviz.viz_description}}</p>
+                    </div>
                 </a>
-                <p class="vizTitle">{{dataviz.viz_id}} | {{dataviz.viz_verbose_name}}</p>
             </div>
         {% endfor %} </ul> 
     </div>
