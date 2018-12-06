@@ -23,8 +23,8 @@ class VizView(generic.DetailView):
     context_object_name = 'selected_dataviz'
     template_name = 'Vizzes/detail.html'
 
-def pickModel(viz_id_arg):
-    modelname = str(Dataviz.objects.get(viz_id=viz_id_arg))
+def pickModel(model):
+    modelname = str(Dataviz.objects.get(model=model))
     return apps.get_model('vizzes', modelname, require_ready=True)
 
 def VizData(request, **args):
