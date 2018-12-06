@@ -1,13 +1,24 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<title>VizLab</title>
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'vizzes/style.css' %}">
-<div class="header"><p>_?_Viz</p></div>
-<div class="body">
-    <h1>Here are the Vizzes</h1>
-        <ul>
+<link href="https://fonts.googleapis.com/css?family=Alegreya" rel="stylesheet">
+<div class="wrapper">
+    <header class="header">
+        <p class="title">VizLab</p> <a class="headerlink" href="admin/">Admin</a>
+    </header>
+    <div class="index-main">
         {% for dataviz in latest_viz_list %}
-            <li><a href="{% url 'vizzes:viz' dataviz.viz_id %}">{{dataviz.viz_id}} | {{dataviz.viz_verbose_name}}</a></li>
-        {% endfor %}
-            <li><a href="admin/">Admin</a></li>
-        </ul>
+            <div class="vizCard">
+                <a class="vizLink" href="{% url 'vizzes:viz' dataviz.model %}">
+                    <img class="vizThumb" src="{{dataviz.viz_thumb.url}}">
+                    <div class="vizDesc">
+                        <h3>{{dataviz.viz_verbose_name}}</h3>
+                    </div>
+                </a>
+            </div>
+        {% endfor %} </ul> 
+    </div>
+    <div class="footer"><p></p></div>
 </div>
-<div class="footer"><p>footie</p></div>

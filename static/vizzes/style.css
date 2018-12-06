@@ -1,0 +1,136 @@
+  body {
+    margin: 0px;
+  }
+  .wrapper {
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+      grid-template-columns: 15vw 70vw 15vw;
+      grid-template-rows: 4vh 94vh 2vh;
+  }
+  
+  .header {
+    top: 0px;
+    left: 0px;
+    grid-column: 1 / 4;
+    grid-row: 1 / 2;
+    background: white;
+    position: fixed;
+    color: darkslategray;
+    opacity: .90;
+    position: fixed;
+    display: grid;
+      grid-template-columns: 15vw 70vw 15vw;  
+      place-items: center;
+    box-shadow: 0 3px 2px rgba(57, 63, 72, 0.3);
+  }
+
+  .header p{
+    text-align: center;
+    margin: 0px;
+  }
+
+  .header p.title {
+    grid-column: 1/2;
+  }
+
+  .header p.vizName {
+    grid-column: 2/3;
+  }
+  .headerlink {
+    grid-column: 3/4;
+    height: 4vh;
+  }
+
+  div.detail_main, div.index-main {
+    top: 4px;
+    grid-column: 1/4;
+    grid-row: 2/3;
+  }
+/* Index Page */
+  div.index-main {
+    margin: 5px;
+    display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      grid-gap:10px;
+      grid-auto-rows: 200px;
+  }
+
+  div.vizCard {
+    display: grid;
+      grid-template-rows: 25% 75%;
+      grid-template-columns: 100%;
+    justify-content: center;
+  }
+
+  a.vizLink {
+    grid-row: 1/3;
+    grid-column: 1/2;
+  }
+
+  img.vizThumb {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  h3.vizTitle {
+    
+  }
+
+  div.vizDesc {
+    display: inline;
+    text-align: center;
+    grid-row: 2/3;
+    grid-column: 1/2;
+    background: #000;
+    opacity: .5;
+    color: white;
+  }
+
+  .mainviz{
+    width: 98vw;
+    height: 60vh;
+    background: whitesmoke;
+  }
+  div.footer {
+    display: grid;
+    grid-column: 1/4;
+    grid-row: 3/4;
+    background: white;
+
+  }
+  div.footer p {
+    text-align: center;
+  }
+  .vizText {
+    width: 98vw;
+  }
+  /* 0001 - women in congress */
+  .axis {
+    font: 10px sans-serif;
+  }
+
+  .axis path,
+  .axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+  }
+  circle {
+    stroke: white;
+    stroke-width: .1vw;
+    opacity: .5;
+  }
+  .totalCongress {
+    stroke: peru;
+    stroke-width: .2vh;
+  }
+  .dem {
+    fill: navy;
+  }
+  .rep {
+    fill: darkred;
+  }

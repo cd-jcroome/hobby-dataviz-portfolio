@@ -40,6 +40,7 @@ def reload_module(module_str):
 def write_model(model_class_str):
     with open("vizzes/models.py", "a+") as fd:
         fd.write(model_class_str)
+    fd.close()
 
 def col_to_field_name(col_label):
     return slugify(col_label).replace("-","_")
@@ -79,6 +80,15 @@ def register_model(model_desc):
     with open('vizzes/admin.py', 'a+') as ad_a2:
         ad_a2.write("\nadmin.site.register(%s)" % model_desc)
         ad_a2.close()
+    with open("vizzes/models.py","r") as vm1:
+        lines = vm1.readlines()
+    vm1.close()
+    with open("vizzes/models.py", "w") as vm2:
+        for i, line in enumerate(lines):
+            if i == 10:
+                vm2.write("\n(\'%s\',\'%s\')," % (model_desc, model_desc))
+            vm2.write(line)
+    vm2.close()
 
 class Command(BaseCommand):
     help = 'Adds New Data from the specified url to the vizzes Models. enter the url, followed by the data description'
