@@ -5,13 +5,13 @@ from django.db import models
 class Dataviz(models.Model):
     """Model definition for Dataviz."""
 
-    viz_id = models.CharField('ID', max_length=4, unique=True)
-    model = models.CharField(max_length=200,
+    # viz_id = models.CharField('ID', max_length=4, unique=True)
+    # model = models.CharField(max_length=200,
+    viz_name = models.CharField(max_length=100,
         choices=[
         ('mlb_beer','mlb_beer'),
         ('women_congress','women_congress')
         ])
-    viz_name = models.CharField(max_length=100)
     viz_verbose_name = models.CharField(max_length=100, default='---')
     date_added = models.DateTimeField('Date Added')
     viz_description = models.TextField(default='A brief Description of the Viz')

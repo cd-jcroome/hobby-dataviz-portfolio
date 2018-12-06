@@ -85,7 +85,7 @@ def register_model(model_desc):
     vm1.close()
     with open("vizzes/models.py", "w") as vm2:
         for i, line in enumerate(lines):
-            if i == 10:
+            if i == 11:
                 vm2.write("\n(\'%s\',\'%s\')," % (model_desc, model_desc))
             vm2.write(line)
     vm2.close()
