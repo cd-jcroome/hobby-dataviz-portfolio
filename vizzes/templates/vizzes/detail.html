@@ -3,9 +3,10 @@
 <title>VizLab</title>
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'vizzes/style.css' %}">
+<link href="https://fonts.googleapis.com/css?family=Alegreya" rel="stylesheet">
 <div class="wrapper">
      <header class="header">
-          <p class="title">VizLab</p> <p class="vizName">{{ selected_dataviz.viz_verbose_name }}</p> <a class="headerlink" href="{% url 'vizzes:index' %}">back home</a>
+          <p class="title">VizLab | {{ selected_dataviz.viz_verbose_name }}</p> <a class="headerlink" href="{% url 'vizzes:index' %}">back home</a>
      </header>
      <div class="detail_main">
           <h4>{{ selected_dataviz.viz_description }}</h4>
@@ -13,10 +14,9 @@
           <!-- <embed src="/static/dataviz/txt/{{ selected_dataviz.viz_id }}.txt" class="vizText"></embed> -->
           <p>Added to DB {{ selected_dataviz.date_added}}
                | <a href="{{ selected_dataviz.viz_source }}"target="_blank">data source</a>
-               | 
           </p>
           <script src="{% static 'vizzes/js/d3.v5.min.js' %}"></script>
-          <script type="text/javascript" src="/static/vizzes/js/{{ selected_dataviz.viz_id }}.js"></script>
+          <script type="text/javascript" src="/static/vizzes/js/{{ selected_dataviz.id }}.js"></script>
           
      </div>
      <div class="footer"><p></p></div>

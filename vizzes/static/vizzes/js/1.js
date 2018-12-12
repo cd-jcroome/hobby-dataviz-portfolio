@@ -11,7 +11,6 @@ var chartGroup = svg.append("g")
 	.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 d3.json("VizData").then(function (data) {
-
 	var y = d3.scaleLinear()
 	.domain([0,d3.max(data,function(d){return d.women_total;})])
 	.range([mainheight, 0]);
@@ -35,8 +34,6 @@ d3.json("VizData").then(function (data) {
 					.order(d3.stackOrderNone)
 					.offset(d3.stackOffsetNone);
 	var datastack = stack(data);
-
-	console.log(datastack);
 
 	chartGroup.append("path")
 		.attr("d",line(data))

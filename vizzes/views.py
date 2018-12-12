@@ -24,11 +24,11 @@ class VizView(generic.DetailView):
     template_name = 'Vizzes/detail.html'
 
 def pickModel(viz_id_arg):
-    modelname = str(Dataviz.objects.get(viz_id=viz_id_arg))
+    modelname = str(Dataviz.objects.get(id=viz_id_arg))
     return apps.get_model('vizzes', modelname, require_ready=True)
 
 def VizData(request, **args):
-    viz_id_arg = str(args['viz_id']).zfill(4)
+    viz_id_arg = args['pk']
     selected_model = pickModel(viz_id_arg)
     data = selected_model.objects.values()
     data = json.loads(json.dumps(data[0:len(data)]))
