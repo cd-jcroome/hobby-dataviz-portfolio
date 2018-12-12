@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
-<title>VizLab</title>
+<title>Jasper Croome</title>
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'vizzes/style.css' %}">
 <div class="wrapper">
     <header class="header">
-        <p class="title">VizLab</p> <a class="headerlink" href="admin/">Admin</a>
+        <p class="title">DataViz</p>
+        <!-- <a class="headerlink" href="admin/">Admin</a> -->
+        <a class="headerlink" href="{% url 'vizzes:about' %}">About</a>
     </header>
     <div class="index-main">
         {% for dataviz in latest_viz_list %}

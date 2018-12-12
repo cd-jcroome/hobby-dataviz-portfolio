@@ -33,3 +33,7 @@ def VizData(request, **args):
     data = selected_model.objects.values()
     data = json.loads(json.dumps(data[0:len(data)]))
     return JsonResponse(data, safe=False)
+
+def aboutView(request):
+    template_name = 'Vizzes/about.html'
+    return render(request, template_name)
