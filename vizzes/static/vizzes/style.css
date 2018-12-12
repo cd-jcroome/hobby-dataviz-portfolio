@@ -44,6 +44,7 @@
   .headerlink {
     grid-column: 3/4;
     height: 4vh;
+    text-decoration: none;
   }
 
   div.detail_main, div.index-main {
@@ -62,6 +63,7 @@
 
   div.vizCard {
     justify-content: center;
+    display: grid;
   }
 
   a.vizLink {
@@ -69,6 +71,7 @@
     grid-column: 1/2;
     display: grid;
       grid-template: 100% 100%;
+      text-decoration: none;
   }
 
   img.vizThumb {

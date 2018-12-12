@@ -7,5 +7,6 @@ urlpatterns = [
     path('', views.IndexView.as_view(), name='index'),
     path(r'<int:pk>/', views.VizView.as_view(), name='viz'),
     path(r'<int:pk>/VizData', views.VizData, name='VizData'),
+    path(r'about', views.aboutView, name='about')
     # path('ingest', views.IngestView, name='ingest'),
 ]
