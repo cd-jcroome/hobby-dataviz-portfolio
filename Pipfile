@@ -15,6 +15,7 @@ django-heroku = "*"
 psycopg2-binary = "*"
 xlrd = "*"
 pillow = "*"
+dj-database-url = "*"
 
 [requires]
 python_version = "3.7.1"
