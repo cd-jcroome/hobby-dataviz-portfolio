@@ -131,4 +131,4 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR
 
 django_heroku.settings(locals())
-DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
+# DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
