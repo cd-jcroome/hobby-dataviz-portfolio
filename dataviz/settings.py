@@ -57,7 +57,7 @@ ROOT_URLCONF = 'dataviz.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR,'vizzes/templates/vizzes/')],
+        'DIRS': [os.path.join(BASE_DIR,'vizzes/templates/')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
