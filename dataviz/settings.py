@@ -82,7 +82,7 @@ WSGI_APPLICATION = 'dataviz.wsgi.application'
 #         'NAME': 'dataviz',
 #         'USER': 'postgres',
 #         'PASSWORD': 'D4ta84nd17!',
-#         'HOST': '.herokuapp.com',
+#         'HOST': 'localhost',
 #         'PORT': '5432',
 #     }
 # }
