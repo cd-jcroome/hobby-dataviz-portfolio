@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'vizzes',
+    'protected-chamber-60694'
 ]
 
 MIDDLEWARE = [
