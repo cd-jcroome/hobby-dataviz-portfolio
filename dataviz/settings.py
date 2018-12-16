@@ -76,9 +76,13 @@ WSGI_APPLICATION = 'dataviz.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
+DATABASE_URL = os.environ['DATABASE_URL']
 
+conn = psycopg2.connect(DATABASE_URL, sslmode='require')
 # django_heroku.settings(locals())
-DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
+DATABASES = {
+    'default': dj_database_url.config(conn_max_age=600, ssl_require=True)
+}
 
 # DATABASES = {
 #     'default': {
@@ -90,10 +94,6 @@ DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True
 #         'PORT': '5432',
 #     }
 # }
-
-DATABASE_URL = os.environ['DATABASE_URL']
-
-conn = psycopg2.connect(DATABASE_URL, sslmode='require')
 
 
 # Password validation
