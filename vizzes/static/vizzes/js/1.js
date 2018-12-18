@@ -10,7 +10,9 @@ var svg = d3.select(".mainviz").append("svg")
 var chartGroup = svg.append("g")
 	.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-d3.json("VizData").then(function (data) {
+// d3.json("VizData").then(function (data) {
+d3.csv("https://gist.githubusercontent.com/Jasparr77/eb2c35c5ba28e5480569cb87b1e5a3a9/raw/e4ad8475eb90688d5c04f65b26537b4b3aabd611/women_in_congress.csv").then(function (data){
+	console.log(data)
 	var y = d3.scaleLinear()
 	.domain([0,d3.max(data,function(d){return d.women_total;})])
 	.range([mainheight, 0]);

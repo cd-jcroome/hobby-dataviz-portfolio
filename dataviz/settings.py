@@ -13,7 +13,6 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 import os
 import django_heroku
 import dj_database_url
-import psycopg2
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -41,7 +40,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'vizzes',
-    'protected-chamber-60694'
 ]
 
 MIDDLEWARE = [
@@ -78,24 +76,20 @@ WSGI_APPLICATION = 'dataviz.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
-DATABASE_URL = os.environ['DATABASE_URL']
-
-conn = psycopg2.connect(DATABASE_URL, sslmode='require')
-# django_heroku.settings(locals())
 DATABASES = {
-    'default': dj_database_url.config(conn_max_age=600, ssl_require=True)
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'dataviz',
+        'USER': 'postgres',
+        'PASSWORD': 'D4ta84nd17!',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
 }
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'dataviz',
-#         'USER': 'postgres',
-#         'PASSWORD': 'D4ta84nd17!',
-#         'HOST': 'localhost',
-#         'PORT': '5432',
-#     }
-# }
+# DATABASE_URL = os.environ['DATABASE_URL']
+
+# conn = psycopg2.connect(DATABASE_URL, sslmode='require')
 
 
 # Password validation
@@ -139,3 +133,6 @@ STATIC_ROOT = os.path.join(BASE_DIR,'static')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR
+
+django_heroku.settings(locals())
+# DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
