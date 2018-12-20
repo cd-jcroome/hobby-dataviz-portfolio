@@ -14,7 +14,7 @@
         {% for dataviz in latest_viz_list %}
             <div class="vizCard">
                 <a class="vizLink" href="{% url 'vizzes:viz' dataviz.id %}">
-                    <img class="vizThumb" src="{{dataviz.viz_thumb.url}}">
+                    <img class="vizThumb" src="{% static dataviz.viz_thumb.url %}">
                     <div class="vizDesc">
                         <h3>{{dataviz.viz_verbose_name}}</h3>
                     </div>

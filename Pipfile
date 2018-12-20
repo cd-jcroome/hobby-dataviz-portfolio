@@ -16,6 +16,7 @@ psycopg2-binary = "*"
 xlrd = "*"
 pillow = "*"
 dj-database-url = "*"
+whitenoise = "*"
 
 [requires]
 python_version = "3.7.1"
