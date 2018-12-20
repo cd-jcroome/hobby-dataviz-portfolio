@@ -10,29 +10,28 @@ var svg = d3.select(".mainviz").append("svg")
 var chartGroup = svg.append("g")
 	.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-// d3.json("VizData").then(function (data) {
-d3.csv("https://gist.githubusercontent.com/Jasparr77/eb2c35c5ba28e5480569cb87b1e5a3a9/raw/e4ad8475eb90688d5c04f65b26537b4b3aabd611/women_in_congress.csv").then(function (data){
+d3.csv("https://gist.githubusercontent.com/Jasparr77/eb2c35c5ba28e5480569cb87b1e5a3a9/raw/318d0a20ae3646b265288ae7b0c6be6176a4e4a5/women_in_congress.csv").then(function (data){
 	console.log(data)
 	var y = d3.scaleLinear()
-	.domain([0,d3.max(data,function(d){return d.women_total;})])
+	.domain([0,435])
 	.range([mainheight, 0]);
 
 	var x = d3.scaleBand()
-	.domain(data.map(function(d){ return d.years;}))
+	.domain(data.map(function(d){ return d.Years;}))
 	.range([0, mainwidth])
 	.paddingInner(.05)
 
 	var yAxis = d3.axisLeft(y);
 
-	var xAxis = d3.axisBottom(x).ticks(10)
+	var xAxis = d3.axisBottom(x).ticks(5)
 
 	var line = d3.line()
-	.x(function(d){ return x(d.years) ;})
-	.y(function(d){ return y(d.women_total); })
+	.x(function(d){ return x(d.Years) ;})
+	.y(function(d){ return y(d.Women_total); })
 	.curve(d3.curveNatural);
 
 	var stack = d3.stack()
-					.keys(["republican","democratic"])
+					.keys(["Republican","Democratic"])
 					.order(d3.stackOrderNone)
 					.offset(d3.stackOffsetNone);
 	var datastack = stack(data);
@@ -46,8 +45,8 @@ d3.csv("https://gist.githubusercontent.com/Jasparr77/eb2c35c5ba28e5480569cb87b1e
 		.data(data)
 		.enter().append("circle")
 		.attr("class","rep")
-		.attr("cx",function(d){return x(d.years);})
-		.attr("cy",function(d){return y(d.republican);})
+		.attr("cx",function(d){return x(d.Years);})
+		.attr("cy",function(d){return y(d.Republican);})
 		.attr("r", (mainwidth/(208)))
 
 
@@ -55,8 +54,8 @@ d3.csv("https://gist.githubusercontent.com/Jasparr77/eb2c35c5ba28e5480569cb87b1e
 		.data(data)
 		.enter().append("circle")
 		.attr("class","dem")
-		.attr("cx",function(d){return x(d.years);})
-		.attr("cy",function(d){return y(d.democratic);})
+		.attr("cx",function(d){return x(d.Years);})
+		.attr("cy",function(d){return y(d.Democratic);})
 		.attr("r", (mainwidth/(208)))
 
 	chartGroup.append("g")
