@@ -10,8 +10,8 @@ class Dataviz(models.Model):
     date_added = models.DateTimeField('Date Added')
     viz_description = models.TextField(default='A brief Description of the Viz')
     viz_source = models.URLField(default='Viz Source')
-    viz_file = models.FileField(upload_to='vizzes/static/vizzes/js')
-    viz_thumb = models.ImageField(upload_to='vizzes/static/vizzes/images')
+    viz_file = models.URLField(default='')
+    viz_thumb = models.URLField(default='')
     author = models.CharField(max_length=25, default='')
     class Meta:
         """Meta definition for Dataviz."""
