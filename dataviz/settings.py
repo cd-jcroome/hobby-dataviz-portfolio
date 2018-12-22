@@ -50,6 +50,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # Simplified static file serving.
+    # https://warehouse.python.org/project/whitenoise/
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'dataviz.urls'
@@ -57,7 +60,7 @@ ROOT_URLCONF = 'dataviz.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR,'dataviz-project/vizzes/templates/')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -86,6 +89,10 @@ DATABASES = {
         'PORT': '5432',
     }
 }
+
+# DATABASE_URL = os.environ['DATABASE_URL']
+
+# conn = psycopg2.connect(DATABASE_URL, sslmode='require')
 
 
 # Password validation
@@ -125,10 +132,16 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR,'static')
+STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR
+# Extra places for collectstatic to find static files.
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+# MEDIA_URL = '/media/'
+# MEDIA_ROOT = BASE_DIR
 
 django_heroku.settings(locals())
-# DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
