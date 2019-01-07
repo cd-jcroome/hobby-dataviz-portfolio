@@ -12,8 +12,8 @@ import json
 
 # Create your views here.
 
-class IndexView(generic.ListView):
-    template_name = 'vizzes/index.html'
+class VizListView(generic.ListView):
+    template_name = 'vizzes/VizList.html'
     context_object_name = 'latest_viz_list'
     def get_queryset(self):
         return Dataviz.objects.order_by('-date_added')[:5]
@@ -36,4 +36,8 @@ def VizData(request, **args):
 
 def aboutView(request):
     template_name = 'vizzes/about.html'
+    return render(request, template_name)
+
+def IndexView(request):
+    template_name = 'vizzes/index.html'
     return render(request, template_name)

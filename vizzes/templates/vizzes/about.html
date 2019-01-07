@@ -3,21 +3,31 @@
 <title>Jasper Croome</title>
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'vizzes/style.css' %}">
+<link href="https://fonts.googleapis.com/css?family=Alegreya" rel="stylesheet">
 <div class="wrapper">
     <header class="header">
-        <p class="title">About This Site...</p>
-        <!-- <a class="headerlink" href="admin/">Admin</a> -->
-        <a class="headerlink" href="{% url 'vizzes:index' %}">back home</a>
+        <p class="title about">About</p>
+        <div class="linksbar">
+            <p class="headerlink">About | <a href="{% url 'vizzes:VizList' %}">Visualizations</a> | <a href="{% url 'vizzes:index' %}">Home</a></p>
+        </div>
     </header>
-    <div class="about-main">
-        <h4>Hi! I'm Jasper.</h4><img src="" Jasper Photo>
-        <p>This Site has two main purposes:</p>
-        <ul>
-            <li>Help me work on my DataViz Skills</li>
-            <li>Share the output of said work with the world</li>
-        </ul>
-        <p>There may be more to this site one day, but for now I'm going to keep it hyperfocused.</p>
-
+    <div id="aboutbody">
+        <div id="aboutsite">
+            <h2>This Site</h2>
+            <p>This site is built using <a href="https://djangoproject.com/">Django</a>, and is hosted on <a href="https://www.heroku.com/">Heroku</a>. 
+            <br>The pages are built using basic HTML / CSS, and the Data Visualizations are built using <a href="https://d3js.org/">D3</a>.
+            <br>The Source Code for this site can be found on my <a href="https://github.com/Jasparr77/dataviz-project">GitHub Page</a>.</p>
+        </div>
+        <div id="aboutjasper">
+            <h2>Jasper</h2>
+            <p>My career to this point has been a meandering path, but I've picked up some tasty tidbits at each stop:</p>
+            <ul>
+                <li>CH Robinson & VTech Communications | Operations, Supply Chain Planning, Analytics | Aug 2011 - October 2015</li>
+                <li>Amazon.com, Inc. | BI Development, Pro[ject/duct/gram] Management | October 2015 - July 2018</li>
+                <li>NIKE, Inc. | Front-End development, BI Development | July 2018 - Present</li>
+            </ul>
+            <p>I also try to spend as much time as possible outdoors -  either hiking, riding my bike, or snowboarding.</p>
+        </div>
     </div>
     <div class="footer"><p></p></div>
 </div>

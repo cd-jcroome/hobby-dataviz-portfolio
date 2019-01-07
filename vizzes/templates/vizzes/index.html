@@ -6,21 +6,14 @@
 <link href="https://fonts.googleapis.com/css?family=Alegreya" rel="stylesheet">
 <div class="wrapper">
     <header class="header">
-        <p class="title">DataViz</p>
-        <!-- <a class="headerlink" href="admin/">Admin</a> -->
-        <a class="headerlink" href="{% url 'vizzes:about' %}">About</a>
+        <p class="title">JC</p>
+            <p><a class="headerlink" href="{% url 'vizzes:about' %}">About</a> | <a class="headerlink" href="{% url 'vizzes:VizList' %}">Visualizations</a> | Home</p>
     </header>
-    <div class="index-main">
-        {% for dataviz in latest_viz_list %}
-            <div class="vizCard">
-                <a class="vizLink" href="{% url 'vizzes:viz' dataviz.id %}">
-                    <img class="vizThumb" src="{{dataviz.viz_thumb}}">
-                    <div class="vizDesc">
-                        <h3>{{dataviz.viz_verbose_name}}</h3>
-                    </div>
-                </a>
-            </div>
-        {% endfor %} </ul> 
+    <div id="indexintro">
+        <h1>Hi, I'm Jasper Croome.</h1>
+        <p>Solution Oriented Front-End Developer
+            <br>with a deep focus and keen interest in
+            <br><a class="headerlink" href="{% url 'vizzes:VizList' %}">Data Visualization</a> and the User Experience.</p>
     </div>
     <div class="footer"><p></p></div>
 </div>

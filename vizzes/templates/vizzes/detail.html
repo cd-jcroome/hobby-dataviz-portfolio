@@ -8,16 +8,23 @@
      <header class="header">
           <p class="title">VizLab | {{ selected_dataviz.viz_verbose_name }}</p> <a class="headerlink" href="{% url 'vizzes:index' %}">back home</a>
      </header>
-     <div class="detail_main">
+     <section id="scroll">
           <h4>{{ selected_dataviz.viz_description }}</h4>
-          <svg class="mainviz"></svg>
-          <!-- <embed src="/static/dataviz/txt/{{ selected_dataviz.viz_id }}.txt" class="vizText"></embed> -->
+          <div class="scroll__graphic"><svg class="mainviz sticky"></svg></div>
+          <div class="scroll__text">
+               <!-- steps = ".step" -->
+               <div class='step' data-step='a'></div>
+               <div class='step' data-step='b'></div>
+               <div class='step' data-step='c'></div>
+          </div>
           <p>Added to DB {{ selected_dataviz.date_added}}
                | <a href="{{ selected_dataviz.viz_source }}"target="_blank">data source</a>
           </p>
+          <script src="{% static 'vizzes/js/resize.js' %}"></script>
+          <script src="{% static 'vizzes/js/intersection-observer.0-5.js' %}"></script>
+          <script src="https://unpkg.com/scrollama"></script>
           <script src="{% static 'vizzes/js/d3.v5.min.js' %}"></script>
-          <script type="text/javascript" src="{{selected_dataviz.viz_file}}"></script>
-          
-     </div>
+          <script type="text/javascript" src="{{selected_dataviz.viz_file}}"></script>    
+     </section>
      <div class="footer"><p></p></div>
 </div>

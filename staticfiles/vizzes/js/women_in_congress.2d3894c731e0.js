@@ -2,18 +2,18 @@
 
 var margin = { top: 20, right: 20, bottom: 60, left: 50 };
 
-var mainwidth = (window.innerWidth - margin.left - margin.right)*(2/3),
+var mainwidth = window.innerWidth - margin.left - margin.right,
 	mainheight = (window.innerHeight*.5) - margin.top - margin.bottom;
 
 var svg = d3.select(".mainviz").append("svg")
-	.attr("width", mainwidth + margin.left + margin.right)
+	.attr("width", (mainwidth + margin.left + margin.right)*(2/3))
 	.attr("height", mainheight + margin.top + margin.bottom);
 
 var chartGroup = svg.append("g")
 	.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 d3.csv("https://gist.githubusercontent.com/Jasparr77/eb2c35c5ba28e5480569cb87b1e5a3a9/raw/318d0a20ae3646b265288ae7b0c6be6176a4e4a5/women_in_congress.csv").then(function (data){
-	console.log(mainheight, mainwidth)
+	console.log(data)
 	var y = d3.scaleLinear()
 	.domain([0,435])
 	.range([mainheight, 0]);
