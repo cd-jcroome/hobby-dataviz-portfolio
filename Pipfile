@@ -17,6 +17,7 @@ xlrd = "*"
 pillow = "*"
 dj-database-url = "*"
 whitenoise = "*"
+python-dateutil = "*"
 
 [requires]
 python_version = "3.7.1"
