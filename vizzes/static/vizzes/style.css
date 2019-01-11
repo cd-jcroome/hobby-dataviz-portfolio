@@ -124,7 +124,7 @@ div.about-main {
     background: whitesmoke;
   }
 
-  /* 0001 - women in congress */
+  /* women in congress */
   .axis {
     font: 10px sans-serif;
   }
@@ -149,4 +149,17 @@ div.about-main {
   }
   .rep {
     fill: darkred;
+  }
+/* NHL Attendance */
+  div.tooltip {
+    position: absolute;
+    text-align: center;
+    width: 15vw;
+    height: 5vh;
+    padding: 2px;
+    font: 12px sans-serif;
+    background: lightsteelblue;
+    border: 0px;
+    border-radius: 8px;
+    pointer-events: none;
   }
