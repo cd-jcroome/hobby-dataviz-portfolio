@@ -181,7 +181,7 @@ display: grid;
 .mainviz{
   width: 98vw;
   height: 60vh;
-  background: whitesmoke;
+  /* background: whitesmoke; */
 }
 .sticky {
   position: -webkit-sticky;
