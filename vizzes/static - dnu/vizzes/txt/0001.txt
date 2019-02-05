@@ -1,0 +1,1 @@
+This was tough - D3 is a doooozie! I'll likley switch to a language like plotly for the next viz, just for ease of use.
