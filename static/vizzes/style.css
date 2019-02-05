@@ -220,7 +220,7 @@ circle {
 }
 /* NHL Attendance */
   div.tooltip {
-    position: absolute;
+    /* position: absolute; */
     text-align: center;
     width: 15vw;
     height: 5vh;
