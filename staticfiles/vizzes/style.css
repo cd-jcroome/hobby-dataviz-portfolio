@@ -43,10 +43,12 @@ body {
   grid-column: 2/3;
 }
 .header a {
-  grid-column: 3/4;
-  height: 4vh;
+  padding: 5px;
+  grid-column: 2/3;
+  /* height: 4vh; */
   text-decoration: none;
-  font-size: 2vw;
+  font-size: 1.5vw;
+  text-align: right;
 }
 
 #scroll {
@@ -78,6 +80,8 @@ div.detail_main, div.index-main {
 
 /* Index Page */
 div.vizlist-main {
+  grid-row: 2/3;
+  grid-column: 1/4;
   margin: 5px;
   display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -127,14 +131,21 @@ div.footer p {
 }
 
 /* about page */
-div.about-main {
+#aboutbody {
 grid-row: 2/3;
 grid-column: 1/4;
 margin: 5px;
 display: grid;
+grid-template-columns: 35vw 35vw;
   /* grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   grid-gap:10px;
   grid-auto-rows: 200px; */
+}
+#aboutsite {
+  grid-column: 1/2;
+}
+#aboutjasper {
+  grid-column: 2/3;
 }
 /* viz detail page */
 .mainviz{
