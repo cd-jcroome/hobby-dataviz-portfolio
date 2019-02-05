@@ -129,7 +129,7 @@ div.footer p {
 }
 
 /* about page */
-div.aboutbody {
+#aboutbody {
 grid-row: 2/3;
 grid-column: 1/4;
 margin: 5px;
@@ -139,10 +139,10 @@ grid-template-columns: 35vw 35vw;
   grid-gap:10px;
   grid-auto-rows: 200px; */
 }
-div.aboutsite {
+#aboutsite {
   grid-column: 1/2;
 }
-div.aboutjasper {
+#aboutjasper {
   grid-column: 2/3;
 }
 /* viz detail page */
