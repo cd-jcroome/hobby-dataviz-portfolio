@@ -30,7 +30,7 @@ body {
 
 .header p{
   text-align: center;
-  margin: 0px;
+  margin: 5px;
 }
 
 .header p.title {
@@ -79,7 +79,7 @@ div.detail_main, div.index-main {
 }
 
 /* Index Page */
-div.vizlist-main {
+.vizlist-main {
   grid-row: 2/3;
   grid-column: 1/4;
   margin: 5px;
@@ -87,6 +87,10 @@ div.vizlist-main {
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     grid-gap:10px;
     grid-auto-rows: 200px;
+}
+.spacer {
+  opacity: 0;
+  font-size: 3vw;
 }
 
 div.vizCard {
