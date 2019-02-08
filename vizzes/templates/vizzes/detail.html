@@ -6,7 +6,7 @@
 <link href="https://fonts.googleapis.com/css?family=Alegreya" rel="stylesheet">
 <div class="wrapper">
      <header class="header">
-          <p class="title">VizLab | {{ selected_dataviz.viz_verbose_name }}</p> <a class="headerlink" href="{% url 'vizzes:index' %}">back home</a>
+          <p class="title">DataViz | {{ selected_dataviz.viz_verbose_name }}</p> <a class="headerlink" href="{% url 'vizzes:index' %}">back home</a>
      </header>
      <section id="scroll">
           <h4>{{ selected_dataviz.viz_description }}</h4>
@@ -19,12 +19,14 @@
           </div>
           <p>Added to DB {{ selected_dataviz.date_added}}
                | <a href="{{ selected_dataviz.viz_source }}"target="_blank">data source</a>
-          </p>
+          </p>   
+     </section>
+     <div class="footer">
           <script src="{% static 'vizzes/js/resize.js' %}"></script>
           <script src="{% static 'vizzes/js/intersection-observer.0-5.js' %}"></script>
           <script src="https://unpkg.com/scrollama"></script>
-          <script src="{% static 'vizzes/js/d3.v5.min.js' %}"></script>
-          <script type="text/javascript" src="{{selected_dataviz.viz_file}}"></script>    
-     </section>
-     <div class="footer"><p></p></div>
+          <script src="{% static 'vizzes/js/d3.v4.min.js' %}"></script>
+          <script src="{% static 'vizzes/js/d3.topojson.v2.min.js' %}"></script>
+          <script type="text/javascript" src="{{selected_dataviz.viz_file}}"></script>
+     </div>
 </div>

@@ -23,27 +23,32 @@ body {
   opacity: .90;
   position: fixed;
   display: grid;
-    grid-template-columns: 40vw 20vw 40vw;  
-    place-items: center;
+    grid-template-columns:  70vw 30vw;  
+    /* place-items: center; */
   box-shadow: 0 3px 2px rgba(57, 63, 72, 0.3);
 }
 
 .header p{
   text-align: center;
-  margin: 0px;
+  margin: 5px;
 }
 
 .header p.title {
-  grid-column: 2/3;
-  font-size: 24px;
+  text-align: left;
+  grid-column: 1/2;
+  font-size: 3vw;
 }
 
 .header p.vizName {
   grid-column: 2/3;
 }
-.linksbar {
-  grid-column: 3/4;
+.header a {
+  padding: 5px;
+  grid-column: 2/3;
+  /* height: 4vh; */
   text-decoration: none;
+  font-size: 1.5vw;
+  text-align: right;
 }
 
 #scroll {
@@ -56,51 +61,36 @@ div.detail_main, div.index-main {
   grid-column: 1/4;
   grid-row: 2/3;
 }
-/* Index */
+
 #indexintro {
-  grid-column: 1/4;
+  grid-column:2/3;
   grid-row: 2/3;
   display: grid;
-    grid-template-columns: 50vw 50vw;
-    grid-template-rows: 
+  grid-template-columns: 35vw 35vw;
+  place-items: center; 
 }
-#indexintro h1 {
+#indexintro h1{
   grid-column: 1/2;
-  font-size: 4vw;
-  justify-self: right;
-  align-self: center;
+  place-content: right;
 }
 #indexintro p {
   grid-column: 2/3;
-  font-size: 16px;
-  justify-self: left;
-  align-self: center;
+  place-content: left;
 }
-/* About */
-#aboutbody {
+
+/* Index Page */
+.vizlist-main {
+  grid-row: 2/3;
   grid-column: 1/4;
-  grid-row: 2/3;
-  display: grid;
-    grid-template-columns: 5vw 45vw 45vw 5vw;
-    grid-template-rows: 47vh 47vh;
-}
-#aboutsite {
-  grid-column: 2/4;
-  grid-row: 1/2;
-}
-#aboutjasper {
-  grid-column: 2/4;
-  grid-row: 2/3;
-}
-/* VizList */
-div.vizlist-main {
-  grid-column: 1/4;
-  grid-row: 2/3;
   margin: 5px;
   display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     grid-gap:10px;
     grid-auto-rows: 200px;
+}
+.spacer {
+  opacity: 0;
+  font-size: 3vw;
 }
 
 div.vizCard {
@@ -145,28 +135,27 @@ div.footer p {
 }
 
 /* about page */
-div.about-main {
+#aboutbody {
 grid-row: 2/3;
 grid-column: 1/4;
 margin: 5px;
 display: grid;
+grid-template-columns: 35vw 35vw;
   /* grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   grid-gap:10px;
   grid-auto-rows: 200px; */
 }
+#aboutsite {
+  grid-column: 1/2;
+}
+#aboutjasper {
+  grid-column: 2/3;
+}
 /* viz detail page */
 .mainviz{
   width: 98vw;
-  height: 60vh;
+  height: 80vh;
   background: whitesmoke;
-}
-.sticky {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 4vh;
-}
-.scrolltext {
-  position: relative;
 }
 
 /* 0001 - women in congress */
@@ -194,4 +183,22 @@ circle {
 }
 .rep {
   fill: darkred;
+}
+
+/* FOTP */
+div.tooltip {
+  position: absolute;
+  text-align: center;
+  padding: 4px;
+  font: 12px sans-serif;
+  background: white;
+  border: 0px;
+  border-radius: 8px;
+  pointer-events: none;
+}
+/* FMW */
+.legend {
+	position:absolute;
+	left:800px;
+	top:350px;
 }

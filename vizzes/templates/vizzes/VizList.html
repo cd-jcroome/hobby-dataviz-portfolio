@@ -9,6 +9,7 @@
         <p class="title">Vizzes</p>
             <p><a class="headerlink" href="{% url 'vizzes:about' %}">About</a> | Visualizations | <a class="headerlink" href="{% url 'vizzes:index' %}">Home</a></p>
     </header>
+    <p class="spacer">Vizzes</p>
     <div class="vizlist-main">
         {% for dataviz in latest_viz_list %}
             <div class="vizCard">
@@ -21,5 +22,9 @@
             </div>
         {% endfor %} </ul> 
     </div>
-    <div class="footer"><p></p></div>
+    <div class="footer">
+            <div id="footercontact">
+                <a href="mailto:jjcroome@gmail.com"> Contact </a>
+            </div>
+        </div>
 </div>

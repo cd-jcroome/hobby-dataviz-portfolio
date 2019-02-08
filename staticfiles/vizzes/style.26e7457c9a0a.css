@@ -182,10 +182,6 @@ circle {
 }
 
 /* FOTP */
-path.countryline {
-  fill: none;
-  stroke: #EF5285;
-  stroke-width: 2px;
 div.tooltip {
   position: absolute;
   text-align: center;
