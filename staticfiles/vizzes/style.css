@@ -150,3 +150,10 @@ circle {
 .rep {
   fill: darkred;
 }
+
+/* FOTP */
+path.countryline {
+  fill: none;
+  stroke: #EF5285;
+  stroke-width: 2px;
+}

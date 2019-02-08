@@ -5,13 +5,13 @@ from django.db import models
 class Dataviz(models.Model):
     """Model definition for Dataviz."""
 
-    viz_name = models.CharField(max_length=100,unique=True)
-    viz_verbose_name = models.CharField(max_length=100, default='---')
+    viz_name = models.CharField(max_length=500,unique=True)
+    viz_verbose_name = models.CharField(max_length=500, default='---')
     date_added = models.DateTimeField('Date Added')
     viz_description = models.TextField(default='A brief Description of the Viz')
-    viz_source = models.URLField(default='Viz Source')
-    viz_file = models.URLField(default='')
-    viz_thumb = models.URLField(default='')
+    viz_source = models.URLField(default='Data Source')
+    viz_file = models.URLField(max_length=500, default='JS file location')
+    viz_thumb = models.URLField(default='thumbnail for Viz Card')
     author = models.CharField(max_length=25, default='')
     class Meta:
         """Meta definition for Dataviz."""
