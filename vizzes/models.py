@@ -10,7 +10,7 @@ class Dataviz(models.Model):
     date_added = models.DateTimeField('Date Added')
     viz_description = models.TextField(default='A brief Description of the Viz')
     viz_source = models.URLField(default='Data Source')
-    viz_file = models.URLField(max_length=500, default='JS file location')
+    viz_file = models.URLField(max_length=500, default='https://cdn.jsdelivr.net/gh/jasparr77/d3/[Folder]/[JS File]')
     viz_thumb = models.URLField(default='thumbnail for Viz Card')
     author = models.CharField(max_length=25, default='')
     class Meta:
