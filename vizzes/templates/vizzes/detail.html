@@ -6,7 +6,7 @@
 <link href="https://fonts.googleapis.com/css?family=Alegreya" rel="stylesheet">
 <div class="wrapper">
      <header class="header">
-          <p class="title">DataViz | {{ selected_dataviz.viz_verbose_name }}</p> <a class="headerlink" href="{% url 'vizzes:index' %}">back home</a>
+          <p class="title">{{ selected_dataviz.viz_verbose_name }}</p> <a class="headerlink" href="{% url 'vizzes:VizList' %}">back</a>
      </header>
      <section id="scroll">
           <h4>{{ selected_dataviz.viz_description }}</h4>
