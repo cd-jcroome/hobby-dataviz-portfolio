@@ -46,11 +46,6 @@ body {
   text-decoration: none;
 }
 
-#scroll {
-  grid-column: 1/4;
-  grid-row: 2/3;
-}
-
 div.detail_main, div.index-main {
   top: 4px;
   grid-column: 1/4;
@@ -62,8 +57,8 @@ div.detail_main, div.index-main {
   grid-row: 2/3;
   display: grid;
     grid-template-columns: 50vw 50vw;
-    grid-template-rows: 
 }
+
 #indexintro h1 {
   grid-column: 1/2;
   font-size: 4vw;
@@ -155,18 +150,30 @@ display: grid;
   grid-auto-rows: 200px; */
 }
 /* viz detail page */
-.mainviz{
+#scroll {
   width: 98vw;
-  height: 60vh;
-  background: whitesmoke;
+  position: relative;
+}
+.scroll__graphic{
+  position: -webkit-sticky;
+  position: sticky;
+  width: 78vw;
+  float: right;
+  top: 0;
+  right: 0;
+}
+.mainviz{
+  position: absolute;
+  width: 78vw;
+  height: 80vh;
+}
+.scroll__text{
+  width: 20vw;
 }
 .sticky {
   position: -webkit-sticky;
   position: sticky;
   top: 4vh;
-}
-.scrolltext {
-  position: relative;
 }
 
 /* 0001 - women in congress */
