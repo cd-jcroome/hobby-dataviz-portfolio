@@ -147,7 +147,7 @@ display: grid;
   position: -webkit-sticky;
   position: sticky;
   float: right;
-  top: 0;
+  top: 6vh;
   right: 0;
   -webkit-transform: translate3d(0, 0, 0);
   -moz-transform: translate3d(0, 0, 0);
@@ -187,7 +187,6 @@ display: grid;
 .sticky {
   position: -webkit-sticky;
   position: sticky;
-  /* top: 4vh; */
 }
 
 /* 0001 - women in congress */
