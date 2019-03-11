@@ -6,34 +6,33 @@ body {
   top: 0px;
   left: 0px;
   grid-column: 1 / 4;
-  grid-row: 1 / 2;
+  height: 4vh;
   background: white;
   position: fixed;
   color: darkslategray;
   opacity: .90;
-  position: fixed;
   display: grid;
-    grid-template-columns: 40vw 20vw 40vw;  
-    place-items: center;
+    grid-template-columns: 40vw 20vw 40vw;
+    grid-template-areas: "title nothing linksbar";
   box-shadow: 0 3px 2px rgba(57, 63, 72, 0.3);
-}
-
-.header p{
-  text-align: center;
-  margin: 0px;
+  z-index: 99999;
 }
 
 .header p.title {
-  grid-column: 2/3;
-  font-size: 24px;
+  position: absolute;
+  font-size: 1.5vw;
+  left: 5%;
+  margin: 5px;
 }
 
-.header p.vizName {
-  grid-column: 2/3;
+.header .linksbar {
+  grid-area: linksbar;
 }
-.linksbar {
-  grid-column: 3/4;
+.linksbar a{
+  position: absolute;
   text-decoration: none;
+  right: 5%;
+  top: 33%;
 }
 
 div.detail_main, div.index-main {
