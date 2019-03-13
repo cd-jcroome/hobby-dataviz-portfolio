@@ -7,7 +7,9 @@
 <div class="wrapper">
     <header class="header">
         <p class="title">Vizzes</p>
-            <p><a class="headerlink" href="{% url 'vizzes:about' %}">About</a> | Visualizations | <a class="headerlink" href="{% url 'vizzes:index' %}">Home</a></p>
+        <div class="linksbar">
+            <p class ="headerlink"><a href="{% url 'vizzes:about' %}">About</a> | Visualizations | <a href="{% url 'vizzes:index' %}">Home</a></p>
+        </div>
     </header>
     <div class="vizlist-main">
         {% for dataviz in latest_viz_list %}

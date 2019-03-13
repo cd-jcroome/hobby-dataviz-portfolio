@@ -7,7 +7,9 @@
 <div class="wrapper">
     <header class="header">
         <p class="title">JC</p>
-            <p><a class="headerlink" href="{% url 'vizzes:about' %}">About</a> | <a class="headerlink" href="{% url 'vizzes:VizList' %}">Visualizations</a> | Home</p>
+        <div class="linksbar">
+            <p class="headerlink"><a href="{% url 'vizzes:about' %}">About</a> | <a href="{% url 'vizzes:VizList' %}">Visualizations</a> | Home</p>
+        </div> 
     </header>
     <div id="indexintro">
         <h1>Hi, I'm Jasper Croome.</h1>

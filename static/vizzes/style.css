@@ -2,6 +2,14 @@ body {
   font-family: 'Alegreya', serif;
 }
 
+.wrapper {
+  top: 0px;
+  left: 0px;
+  display: grid;
+    grid-template-columns: 25vw 50vw 25vw;
+    grid-template-rows: 5vh 90vh 5vh;
+}
+
 .header {
   top: 0px;
   left: 0px;
@@ -26,13 +34,16 @@ body {
 }
 
 .header .linksbar {
+  height: 4vh;
   grid-area: linksbar;
-}
-.linksbar a{
   position: absolute;
   text-decoration: none;
   right: 5%;
-  top: 33%;
+}
+
+.headerlink{
+  text-align: center;
+  display: inline;
 }
 
 div.detail_main, div.index-main {
