@@ -38,12 +38,15 @@ body {
   grid-area: linksbar;
   position: absolute;
   text-decoration: none;
-  right: 5%;
+  display: block;
+  right: 0%;
+  margin: 10px;
+  /* float: right; */
 }
 
 .headerlink{
-  text-align: center;
-  display: inline;
+  display: table-cell;
+  vertical-align: middle;
 }
 
 div.detail_main, div.index-main {
@@ -119,7 +122,7 @@ img.vizThumb {
   object-fit: cover;
 }
 
-div.vizDesc {
+div.vizTitle {
   text-align: center;
   transform: translate(0%, -100%);
   background: slategray;
@@ -135,6 +138,9 @@ div.footer {
 div.footer p {
   text-align: center;
 }
+#footercontact a{
+  text-decoration: none;
+}
 .vizText {
   width: 98vw;
 }
@@ -149,9 +155,14 @@ display: grid;
   grid-gap:10px;
   grid-auto-rows: 200px; */
 }
+
 /* viz detail page */
 #scroll {
   position: relative;
+}
+.vizDesc{
+  position: relative;
+  top: 6vh;
 }
 .scroll__graphic {
   position: -webkit-sticky;
