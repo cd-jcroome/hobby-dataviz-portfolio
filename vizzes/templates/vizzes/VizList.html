@@ -3,7 +3,7 @@
 <title>Jasper Croome</title>
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'vizzes/style.css' %}">
-<link href="https://fonts.googleapis.com/css?family=Alegreya" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Eczar:400,600|Gentium+Basic" rel="stylesheet">
 <div class="wrapper">
     <header class="header">
         <p class="title">Vizzes</p>
@@ -17,7 +17,7 @@
                 <a class="vizLink" href="{% url 'vizzes:viz' dataviz.id %}">
                     <img class="vizThumb" src="{{dataviz.viz_thumb}}">
                     <div class="vizTitle">
-                        <h3>{{dataviz.viz_verbose_name}}</h3>
+                        <p>{{dataviz.viz_verbose_name}}</p>
                     </div>
                 </a>
             </div>
@@ -25,7 +25,7 @@
     </div>
     <div class="footer">
             <div id="footercontact">
-                <a href="mailto:jjcroome@gmail.com"> Contact </a>
+                <a href="mailto:jjcroome@gmail.com">&#9993;</a>
             </div>
         </div>
 </div>
