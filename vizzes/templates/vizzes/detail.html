@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>VizLab</title>
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'vizzes/style.css' %}">
 <link href="https://fonts.googleapis.com/css?family=Eczar:400,600|Gentium+Basic" rel="stylesheet">
      <header class="header">
-          <p class="title">{{ selected_dataviz.viz_verbose_name }}</p> 
+          <p class="vizVerbose">{{ selected_dataviz.viz_verbose_name }}</p> 
           <div class="linksbar"> 
                <a class="headerlink" href="{% url 'vizzes:VizList' %}">back</a>
           </div>
@@ -26,5 +27,5 @@
           <script src="{% static 'vizzes/js/d3.v4.min.js' %}"></script>
           <script src="{% static 'vizzes/js/d3.topojson.v2.min.js' %}"></script>
           <script type="text/javascript" src="{{selected_dataviz.viz_file}}"></script>
-          <div id="footercontact"><a href="mailto:jjcroome@gmail.com">&#9993;</a></div>
+          <!-- <div id="footercontact"><a href="mailto:jjcroome@gmail.com">&#9993;</a></div> -->
      </div>
