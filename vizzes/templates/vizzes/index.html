@@ -5,22 +5,18 @@
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'vizzes/style.css' %}">
 <link href="https://fonts.googleapis.com/css?family=Eczar:400,600|Gentium+Basic" rel="stylesheet">
-<div class="wrapper">
-    <header class="header">
-        <p class="title">JC</p>
-        <div class="linksbar">
-            <p class="headerlink"><a href="{% url 'vizzes:about' %}">About</a> | <a href="{% url 'vizzes:VizList' %}">Visualizations</a> | Home</p>
-        </div> 
-    </header>
-    <div id="indexintro">
-        <h1>Hi, I'm Jasper Croome.</h1>
-        <p>I'm a Solution Oriented Front-End Developer
-            <br>with a deep focus on
-            <br><a href="{% url 'vizzes:VizList' %}">Data Visualization</a>.</p>
-    </div>
-    <div class="footer">
-        <div id="footercontact">
-            <a href="mailto:jjcroome@gmail.com">&#9993;</a>
-        </div>
-    </div>
+<header class="header">
+    <p class="title">JC</p>
+    <div class="linksbar">
+        <p class="headerlink"><a href="{% url 'vizzes:about' %}">About</a> | <a href="{% url 'vizzes:VizList' %}">Visualizations</a> | Home</p>
+    </div> 
+</header>
+<div id="indexintro">
+    <h1>Hi, I'm Jasper Croome.</h1>
+    <p>I'm a Solution Oriented Front-End Developer
+        <br>with a deep focus on
+        <br><a href="{% url 'vizzes:VizList' %}">Data Visualization</a>.</p>
+</div>
+<div class="footer">
+    <p>email: <a href="mailto:jjcroome@gmail.com">jjcroome@gmail.com</a></p>
 </div>

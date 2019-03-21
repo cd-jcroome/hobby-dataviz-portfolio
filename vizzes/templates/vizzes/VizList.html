@@ -5,28 +5,24 @@
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'vizzes/style.css' %}">
 <link href="https://fonts.googleapis.com/css?family=Eczar:400,600|Gentium+Basic" rel="stylesheet">
-<div class="wrapper">
-    <header class="header">
-        <p class="title">Vizzes</p>
-        <div class="linksbar">
-            <p class ="headerlink"><a href="{% url 'vizzes:about' %}">About</a> | Visualizations | <a href="{% url 'vizzes:index' %}">Home</a></p>
-        </div>
-    </header>
-    <div class="vizlist-main">
-        {% for dataviz in latest_viz_list %}
-            <div class="vizCard">
-                <a class="vizLink" href="{% url 'vizzes:viz' dataviz.id %}">
-                    <img class="vizThumb" src="{{dataviz.viz_thumb}}">
-                    <div class="vizTitle">
-                        <p>{{dataviz.viz_verbose_name}}</p>
-                    </div>
-                </a>
-            </div>
-        {% endfor %} </ul> 
+<header class="header">
+    <p class="title">Vizzes</p>
+    <div class="linksbar">
+        <p class ="headerlink"><a href="{% url 'vizzes:about' %}">About</a> | Visualizations | <a href="{% url 'vizzes:index' %}">Home</a></p>
     </div>
-    <div class="footer">
-            <div id="footercontact">
-                <a href="mailto:jjcroome@gmail.com">&#9993;</a>
-            </div>
+</header>
+<div class="vizlist-main">
+    {% for dataviz in latest_viz_list %}
+        <div class="vizCard">
+            <a class="vizLink" href="{% url 'vizzes:viz' dataviz.id %}">
+                <img class="vizThumb" src="{{dataviz.viz_thumb}}">
+                <div class="vizTitle">
+                    <p>{{dataviz.viz_verbose_name}}</p>
+                </div>
+            </a>
         </div>
+    {% endfor %} </ul> 
+</div>
+<div class="footer">
+    <p>email: <a href="mailto:jjcroome@gmail.com">jjcroome@gmail.com</a></p>
 </div>

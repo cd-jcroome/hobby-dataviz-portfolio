@@ -23,13 +23,11 @@
     div.footer {
       background: white;
       opacity: .90;
+      box-shadow: 0 -3px 2px rgba(57, 63, 72, 0.3);
+      color: black;
     }
-    #footercontact {
-      background: orangered;
-      box-shadow: 0 6px 2px rgba(57, 63, 72, 0.3);
-    }
-    #footercontact a{
-      color: whitesmoke;
+    .footer a{
+      color: black;
     }
   /* VizList */
     div.vizTitle {
@@ -43,7 +41,7 @@
     top: 0px;
     left: 0px;
     grid-column: 1 / 4;
-    height: 10vw;
+    height: 8vw;
     position: fixed;
     display: grid;
       grid-template-columns: 15vw 85vw;
@@ -52,7 +50,7 @@
   }
   .header p.title {
     position: absolute;
-    font-size: 6vw;
+    font-size: 5vw;
     margin: 5px;
   }
   .header .linksbar {
@@ -71,66 +69,56 @@
   }
 
   .wrapper {
-  top: 0px;
+  margin: 0;
+  top: 8vw;
   left: 0px;
   display: grid;
     grid-template-columns: 25vw 50vw 25vw;
-    grid-template-rows: 5vh 90vh 5vh;
+    grid-template-rows: 8vw 90vh 0vh;
   }
 
   div.footer {
-    display: grid;
-    grid-column: 1/4;
-    grid-row: 3/4;
-    background: white;
-  }
-  div.footer p {
-    text-align: center;
-  }
-  #footercontact {
     position: fixed;
-    top: 80%;
-    left: 88%;
-    width: 10vw;
-    height: 10vw;
-    border-radius: 50%;
-    text-align: center;
-    text-justify: center;
+    top:95%;
+    left:0%;
+    /* height: 25%; */
+    width: 100%;
     z-index: 99999;
+    font-size: 4vh;
   }
-  #footercontact a {
-    font-size: 8vw;
-    position: absolute;
-    right: 20%;
-    top: 10%;
-    text-decoration: none;
+  .footer p {
+    margin-top: 2px;
+    text-align: center;
   }
 
 /* Index */
   #indexintro {
-    grid-column: 1/4;
-    grid-row: 2/3;
+    position: absolute;
+    top: 8vw;
+    left:0%;
+    height:85%;
+    width:100%;
     display: grid;
       grid-template-columns: 50vw 50vw;
   }
   #indexintro h1 {
     grid-column: 1/2;
-    font-size: 12vw;
+    font-size: 10vw;
     text-align: right;
     align-self: center;
   }
   #indexintro p {
     margin: 8px;
     grid-column: 2/3;
-    font-size: 6vw;
+    font-size: 5vw;
     justify-self: left;
     align-self: center;
   }
 
 /* About */
   #aboutbody {
-    grid-column: 1/4;
-    grid-row: 2/3;
+    position: relative;
+    top: 8vw;
     display: grid;
       grid-template-columns: 5vw 45vw 45vw 5vw;
       grid-template-rows: 30vh 45vh;
@@ -146,8 +134,8 @@
 
 /* VizList */
   div.vizlist-main {
-    grid-column: 1/4;
-    grid-row: 2/3;
+    position: relative;
+    top: 8vw;
     margin: 5px;
     display: grid;
       grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -191,7 +179,7 @@
 /* viz detail page */
   .header p.vizVerbose {
     position: absolute;
-    font-size: 7vw;
+    font-size: 5vw;
     margin: 5px;
   }
   #scroll {
@@ -199,8 +187,8 @@
     top: 15vw;
   }
   .vizDesc{
-    position: absolute;
-    top: 11vw;
+    padding: 0 1rem;
+    max-width: 15rem;
   }
   .scroll__graphic {
     position: -webkit-sticky;
@@ -241,268 +229,3 @@
     position: -webkit-sticky;
     position: sticky;
   }
-
-@media only screen and (min-width: 768px) {
-  /* fonts, colors, shadows */
-  /* General site */
-    body {
-      font-family: 'Eczar', serif;
-      font-family: 'Gentium Basic', serif;
-    }
-
-    body h1 h2 h3 h4 h5 h6{
-      font: 'Eczar', serif;
-    }
-
-    body p a {
-      font: 'Gentium Basic', serif;
-    }
-
-    .header {
-      background: white;
-      color: darkslategray;
-      opacity: .90;
-      box-shadow: 0 3px 2px rgba(57, 63, 72, 0.3);
-    }
-
-    div.footer {
-      background: white;
-      opacity: .90;
-    }
-    #footercontact {
-      background: orangered;
-      box-shadow: 0 6px 2px rgba(57, 63, 72, 0.3);
-    }
-    #footercontact a{
-      color: whitesmoke;
-    }
-  /* VizList */
-    div.vizTitle {
-      background: slategray;
-      opacity: .75;
-      color: whitesmoke;
-    }
-
-  /* layout, positioning, sizing */
-    .header {
-      top: 0px;
-      left: 0px;
-      grid-column: 1 / 4;
-      height: 4vh;
-      position: fixed;
-      display: grid;
-        grid-template-columns: 40vw 20vw 40vw;
-        grid-template-areas: "title nothing linksbar";
-      z-index: 99999;
-    }
-    .header .linksbar {
-      width: 85vw;
-      grid-area: linksbar;
-      position: absolute;
-      text-decoration: none;
-      text-align: right;
-      float: right;
-      right: 0%;
-      margin: 5px;
-    }
-    .headerlink{
-      display: inline;
-      vertical-align: middle;
-    }
-    .header p.title {
-      position: absolute;
-      font-size: 1.5vw;
-      left: 5%;
-      margin: 5px;
-    }
-
-    .wrapper {
-    top: 0px;
-    left: 0px;
-    display: grid;
-      grid-template-columns: 25vw 50vw 25vw;
-      grid-template-rows: 5vh 90vh 5vh;
-    }
-
-    div.footer {
-      display: grid;
-      grid-column: 1/4;
-      grid-row: 3/4;
-      background: white;
-    }
-    div.footer p {
-      text-align: center;
-    }
-    #footercontact {
-      position: fixed;
-      top: 85%;
-      left: 45%;
-      width: 5vw;
-      height: 5vw;
-      border-radius: 50%;
-      text-align: center;
-      text-justify: center;
-      z-index: 99999;
-    }
-    #footercontact a {
-      font-size: 5vw;
-      position: absolute;
-      left: 15%;
-      text-decoration: none;
-    }
-
-  /* Index */
-    #indexintro {
-      grid-column: 1/4;
-      grid-row: 2/3;
-      display: grid;
-        grid-template-columns: 50vw 50vw;
-    }
-    #indexintro h1 {
-      grid-column: 1/2;
-      font-size: 4vw;
-      justify-self: right;
-      align-self: center;
-    }
-    #indexintro p {
-      grid-column: 2/3;
-      font-size: 16px;
-      justify-self: left;
-      align-self: center;
-    }
-
-  /* About */
-    #aboutbody {
-      grid-column: 1/4;
-      grid-row: 2/3;
-      display: grid;
-        grid-template-columns: 5vw 45vw 45vw 5vw;
-        grid-template-rows: 47vh 47vh;
-    }
-    #aboutsite {
-      grid-column: 2/4;
-      grid-row: 1/2;
-    }
-    #aboutjasper {
-      grid-column: 2/4;
-      grid-row: 2/3;
-    }
-
-  /* VizList */
-    div.vizlist-main {
-      grid-column: 1/4;
-      grid-row: 2/3;
-      margin: 5px;
-      display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-        grid-gap:10px;
-        grid-auto-rows: 200px;
-    }
-    div.vizCard {
-      justify-content: center;
-      display: grid;
-    }
-    a.vizLink {
-      grid-row: 1/3;
-      grid-column: 1/2;
-      display: grid;
-        grid-template: 100% 100%;
-        text-decoration: none;
-    }
-    img.vizThumb {
-      height: 100%;
-      width: 100%;
-      grid-row: 1/4;
-      grid-column: 1/2;
-      object-fit: cover;
-    }
-    div.vizTitle {
-      text-align: center;
-      transform: translate(0%, -100%);
-      background: slategray;
-      opacity: .75;
-      color: white;
-    }
-
-  /* about page */
-    div.about-main {
-    grid-row: 2/3;
-    grid-column: 1/4;
-    margin: 5px;
-    display: grid;
-    }
-
-  /* viz detail page */
-    #scroll {
-      position: relative;
-    }
-    .vizDesc{
-      position: relative;
-      top: 6vh;
-    }
-    .scroll__graphic {
-      position: -webkit-sticky;
-      position: sticky;
-      float: right;
-      top: 25%;
-      right: 0%;
-      -webkit-transform: translate3d(0, 0, 0);
-      -moz-transform: translate3d(0, 0, 0);
-      transform: translate3d(0, 0, 0);
-    }
-    .scroll__graphic.is-fixed {
-      position: fixed;
-    }
-    .scroll__graphic.is-bottom {
-      bottom: 0;
-      top: auto;
-    }
-    .scroll__graphic.chart {
-      position: absolute;
-      right: 1rem;
-      top: 50%;
-      -moz-transform: translateY(-50%);
-      -webkit-transform: translateY(-50%);
-      transform: translateY(-50%);
-    }
-    .scroll__text {
-      padding: 0 1rem;
-      max-width: 30rem;
-    }
-    .step {
-      padding: 1rem;
-    }
-    .step.is-active {
-      opacity: 1;
-    }
-    .sticky {
-      position: -webkit-sticky;
-      position: sticky;
-    }
-}
-
-/* 0001 - women in congress */
-.axis {
-  font: 10px sans-serif;
-}
-.axis path,
-.axis line {
-  fill: none;
-  stroke: #000;
-  shape-rendering: crispEdges;
-}
-circle {
-  stroke: white;
-  stroke-width: .1vw;
-  opacity: .5;
-}
-.totalCongress {
-  stroke: peru;
-  stroke-width: .2vh;
-}
-.dem {
-  fill: navy;
-}
-.rep {
-  fill: darkred;
-}
