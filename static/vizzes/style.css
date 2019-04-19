@@ -57,7 +57,6 @@
     width: 85vw;
     grid-area: linksbar;
     position: absolute;
-    text-decoration: none;
     text-align: right;
     float: right;
     right: 0%;
@@ -81,7 +80,6 @@
     position: fixed;
     top:95%;
     left:0%;
-    /* height: 25%; */
     width: 100%;
     z-index: 99999;
     font-size: 4vh;
@@ -228,4 +226,7 @@
   .sticky {
     position: -webkit-sticky;
     position: sticky;
+  }
+  div.tooltip{
+    position: fixed;
   }
