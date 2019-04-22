@@ -1,0 +1,13 @@
+------Jasper's Spring refresh list------
+This is in no particular order:
+[] UX | logo  design - something with the deep blue of the open ocean / mt hood sky?
+[] UX | font choice - let's switch to sans serif
+[] CSS | responsive re-work
+[] JS | landing page - gradients depending on time of day 
+[] Heroku | productionalize - jaspercroo.me, upgrade from free plan
+[] Django | upload options for Tableau Public
+[] Django | non-scrolly upload options 
+[] Django | SEO - don't sell your soul, but see what can be done
+[] GitHub | fork d3 into portfolio
+[] Github | share vanilla version with world
+------Done by Friday before Memorial Day (5/24)------
