@@ -11,7 +11,7 @@ class Dataviz(models.Model):
     viz_description = models.TextField(default='A brief Description of the Viz')
     viz_source = models.URLField(default='Data Source')
     viz_file = models.URLField(max_length=500, default='https://cdn.jsdelivr.net/gh/jasparr77/d3/[Folder]/[JS File]')
-    viz_thumb = models.URLField(default='thumbnail for Viz Card')
+    viz_thumb = models.URLField(default='https://cdn.jsdelivr.net/gh/jasparr77/d3/[Folder]/[PNG File]')
     author = models.CharField(max_length=25, default='')
     class Meta:
         """Meta definition for Dataviz."""

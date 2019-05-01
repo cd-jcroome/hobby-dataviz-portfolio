@@ -4,8 +4,9 @@
 <title>VizLab</title>
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'vizzes/style.css' %}">
-<link href="https://fonts.googleapis.com/css?family=Eczar:400,600|Gentium+Basic" rel="stylesheet">
-     <header class="header">
+<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+     <header class="header"id="headerVizDetail">
+          <a href="{% url 'vizzes:index' %}"><div id="vizdetailTitleBox"><p class="title"id="vizdetailTitle">JC</p></div></a>
           <p class="vizVerbose">{{ selected_dataviz.viz_verbose_name }}</p> 
           <div class="linksbar"> 
                <a class="headerlink" href="{% url 'vizzes:VizList' %}">back</a>
@@ -25,5 +26,4 @@
           <script src="{% static 'vizzes/js/d3.topojson.v2.min.js' %}"></script>
           <script type="text/javascript" src="{{selected_dataviz.viz_file}}"></script>
           <p>Added to DB {{ selected_dataviz.date_added}}  <a href="{{ selected_dataviz.viz_source }}"target="_blank">data source</a></p> 
-          <!-- <div id="footercontact"><a href="mailto:jjcroome@gmail.com">&#9993;</a></div> -->
      </div>

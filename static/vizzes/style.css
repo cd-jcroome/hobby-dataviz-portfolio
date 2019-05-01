@@ -1,34 +1,70 @@
 /* fonts, colors, shadows */
   /* General site */
     body {
-      font-family: 'Eczar', serif;
-      font-family: 'Gentium Basic', serif;
-    }
-
-    body h1 h2 h3 h4 h5 h6{
-      font: 'Eczar', serif;
-    }
-
-    body p a {
-      font: 'Gentium Basic', serif;
+      font-family: 'Quicksand', sans-serif;
     }
 
     .header {
       background: white;
-      color: darkslategray;
+      color: black;
       opacity: .90;
       box-shadow: 0 3px 2px rgba(57, 63, 72, 0.3);
+    }
+    .header a{
+      text-decoration: none;
+    }
+    .header a:visited{
+      text-decoration: none;
+      color: black;
+    }
+    #indexTitleBox{
+      background: seagreen;
+    }
+    #aboutTitleBox{
+      background: slateblue;
+    }
+    #aboutTitleBox:hover{
+      background:seagreen;
+    }
+    a#aboutLink:hover{
+      color:slateblue;
+      text-decoration-line: underline;
+    }
+    #vizlistTitleBox{
+      background:goldenrod;
+    }
+    #vizlistTitleBox:hover{
+      background:seagreen;
+    }
+    a#vizlistLink:hover{
+      color:goldenrod;
+      text-decoration-line: underline;
+    }
+    #vizdetailTitleBox{
+      background:lightslategray;
+    }
+    #vizdetailTitleBox:hover{
+      background:seagreen;
+    }
+    p.title{
+      color: white;
+      text-decoration: none;
+    }
+    p.title a:visited{
+      color: white;
+      text-decoration: none;
     }
 
     div.footer {
       background: white;
+      color: black;
       opacity: .90;
       box-shadow: 0 -3px 2px rgba(57, 63, 72, 0.3);
-      color: black;
     }
-    .footer a{
-      color: black;
-    }
+  #aboutbody b{
+    color: cornflowerblue;
+    font-weight: bold;
+  }
   /* VizList */
     div.vizTitle {
       background: slategray;
@@ -37,21 +73,27 @@
     }
 
 /* layout, positioning, sizing */
+* {
+  box-sizing: border-box;
+}
   .header {
     top: 0px;
     left: 0px;
     grid-column: 1 / 4;
-    height: 8vw;
+    height: 50px;
     position: fixed;
     display: grid;
       grid-template-columns: 15vw 85vw;
-      grid-template-areas: "title nothing linksbar";
+      grid-template-areas: "title linksbar";
     z-index: 99999;
   }
   .header p.title {
     position: absolute;
-    font-size: 5vw;
-    margin: 5px;
+    top: 3px;
+    left: 3px;
+    font-family: 'Quicksand', 'sans-serif';
+    font-size: 36px;
+    margin: 0px 0px;
   }
   .header .linksbar {
     width: 85vw;
@@ -61,10 +103,27 @@
     float: right;
     right: 0%;
     margin: 5px;
+    font-size: 20px;
   }
   .headerlink{
     display: inline;
     vertical-align: middle;
+  }
+  #indexTitleBox{
+    height:50px;
+    width:50px;
+  }
+  #aboutTitleBox{
+    height:50px;
+    width:50px;
+  }
+  #vizlistTitleBox{
+    height:50px;
+    width:50px;
+  }
+  #vizdetailTitleBox{
+    height:50px;
+    width:50px;
   }
 
   .wrapper {
@@ -76,13 +135,51 @@
     grid-template-rows: 8vw 90vh 0vh;
   }
 
+  #contactbar {
+    position: fixed;
+    top: 85vh;
+    left: 20vw;
+    width:60vw;
+    display: grid;
+      grid-template-columns: 15vw 15vw 15vw 15vw;
+      grid-template-rows: 8vw;
+  }
+  .contactbutton {
+    position: relative;
+    justify-self: center;
+    align-self: center;
+  }
+  #contactbar img {
+    width: 8vw;
+  }
+
+  #footercontactbar {
+    position: fixed;
+    bottom: 0vh;
+    left: 0px;
+    width:100%;
+    display: grid;
+      grid-template-columns: 20vw 15vw 15vw 15vw 15vw 20vw;
+      grid-template-rows: 10vh;
+    z-index:99999;
+    background-color:white;
+  }
+  .footercontactbutton {
+    position: relative;
+    justify-self: center;
+    align-self: center;
+  }
+  #footercontactbar img {
+    width: 8vw;
+  }
+
   div.footer {
     position: fixed;
     top:95%;
     left:0%;
     width: 100%;
     z-index: 99999;
-    font-size: 4vh;
+    font-size: 2vw;
   }
   .footer p {
     margin-top: 2px;
@@ -92,53 +189,58 @@
 /* Index */
   #indexintro {
     position: absolute;
-    top: 8vw;
+    top: 5vh;
     left:0%;
     height:85%;
     width:100%;
     display: grid;
-      grid-template-columns: 50vw 50vw;
+      grid-template-rows: 35% 30% 35%;
+    background-color: white;
   }
   #indexintro h1 {
-    grid-column: 1/2;
-    font-size: 10vw;
-    text-align: right;
-    align-self: center;
+    grid-row: 2/3;
+    font-family: 'Quicksand', sans-serif;
+    color: seagreen;
+    font-size: 14vw;
+    text-align: left;
+    top: 0px; 
   }
   #indexintro p {
     margin: 8px;
-    grid-column: 2/3;
-    font-size: 5vw;
+    grid-row: 3/4;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 4vw;
     justify-self: left;
-    align-self: center;
+    top: 0px
   }
 
 /* About */
   #aboutbody {
     position: relative;
-    top: 8vw;
+    top: 50px;
     display: grid;
       grid-template-columns: 5vw 45vw 45vw 5vw;
-      grid-template-rows: 30vh 45vh;
+    color:black;
+    background-color: white;
+  }
+  #aboutbody h2{
+    font-family: 'Quicksand', 'sans-serif';
   }
   #aboutsite {
     grid-column: 2/4;
-    grid-row: 1/2;
-  }
-  #aboutjasper {
-    grid-column: 2/4;
-    grid-row: 2/3;
   }
 
 /* VizList */
   div.vizlist-main {
     position: relative;
-    top: 8vw;
+    top: 10vh;
+    height:80vh;
     margin: 5px;
     display: grid;
       grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
       grid-gap:10px;
       grid-auto-rows: 200px;
+    overflow: scroll;
   }
   div.vizCard {
     justify-content: center;
@@ -177,16 +279,13 @@
 /* viz detail page */
   .header p.vizVerbose {
     position: absolute;
+    left:50px;
     font-size: 5vw;
     margin: 5px;
   }
   #scroll {
     position: relative;
-    top: 15vw;
-  }
-  .vizDesc{
-    padding: 0 1rem;
-    max-width: 15rem;
+    top: 50px;
   }
   .scroll__graphic {
     position: -webkit-sticky;
@@ -217,6 +316,9 @@
     padding: 0 1rem;
     max-width: 15rem;
   }
+  .scroll__text .step{
+    align-content: center;
+  }
   .step {
     padding: 1rem;
   }
@@ -230,3 +332,216 @@
   div.tooltip{
     position: fixed;
   }
+
+/*
+Desktop layouut 
+-
+-
+-
+-
+-
+*/
+@media only screen and (min-width: 568px) {
+    * {
+    box-sizing: border-box;
+  }
+    .header {
+      top: 0px;
+      left: 0px;
+      height: 10vh;
+      position: fixed;
+      z-index: 99999;
+    }
+    .header p.title {
+      position: absolute;
+      font-family: 'Quicksand', 'sans-serif';
+      font-size: 7vh;
+    }
+    .header .linksbar {
+      width: 25vw;
+      grid-area: linksbar;
+      position: absolute;
+      text-align: right;
+      float: right;
+      right: 0%;
+      margin: 2vh 1vh;
+      font-size: 3vh;
+    }
+    .headerlink{
+      display: inline;
+      vertical-align: middle;
+    }
+    #indexTitleBox{
+      height:10vh;
+      width:10vh;
+    }
+    #aboutTitleBox{
+      height:10vh;
+      width:10vh;
+    }
+    #vizlistTitleBox{
+      height:10vh;
+      width:10vh;
+    }
+    #vizdetailTitleBox{
+      height:10vh;
+      width:10vh;
+    }
+
+    .wrapper {
+    margin: 0;
+    top: 8vw;
+    left: 0px;
+    display: grid;
+      grid-template-columns: 25vw 50vw 25vw;
+      grid-template-rows: 8vw 90vh 0vh;
+    }
+
+    #footercontactbar img {
+      width: 4vw;
+    }
+    div.footer {
+      position: fixed;
+      top:95%;
+      left:0%;
+      width: 100%;
+      z-index: 99999;
+      font-size: 2vw;
+    }
+    .footer p {
+      margin-top: 2px;
+      text-align: center;
+    }
+
+  /* Index */
+    #indexintro h1 {
+      font-size: 8vw;
+      margin-top: 0px;
+
+    }
+    #indexintro p {
+      font-size: 3vw;
+    }
+
+  /* About */
+    #aboutbody {
+      position: relative;
+      top: 10vh;
+      display: grid;
+        grid-template-columns: 5vw 45vw 45vw 5vw;
+        grid-template-rows:75vh;
+      color:black;
+      background-color: white;
+      overflow: scroll;
+    }
+    #aboutbody h2{
+      font-family: 'Quicksand', 'sans-serif';
+    }
+    #aboutsite {
+      grid-column: 2/4;
+      grid-row: 1/2;
+    }
+    #aboutjasper {
+      grid-column: 2/4;
+      grid-row: 2/3;
+    }
+
+  /* VizList */
+    div.vizlist-main {
+      position: relative;
+      top: 10vh;
+      margin: 5px;
+      display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        grid-gap:10px;
+        grid-auto-rows: 200px;
+      overflow: scroll;
+    }
+    div.vizCard {
+      justify-content: center;
+      display: grid;
+    }
+    a.vizLink {
+      grid-row: 1/3;
+      grid-column: 1/2;
+      display: grid;
+        grid-template: 100% 100%;
+        text-decoration: none;
+    }
+    img.vizThumb {
+      height: 100%;
+      width: 100%;
+      grid-row: 1/4;
+      grid-column: 1/2;
+      object-fit: cover;
+    }
+    div.vizTitle {
+      text-align: center;
+      transform: translate(0%, -100%);
+      background: slategray;
+      opacity: .75;
+      color: white;
+  }
+
+  /* about page */
+    div.about-main {
+    grid-row: 2/3;
+    grid-column: 1/4;
+    margin: 5px;
+    display: grid;
+    }
+
+  /* viz detail page */
+    .header p.vizVerbose {
+      position: absolute;
+      left:10vh;
+      font-size: 5vw;
+      margin: 5px;
+    }
+    #scroll {
+      position: relative;
+      top: 10vh;
+    }
+    .scroll__graphic {
+      position: -webkit-sticky;
+      position: sticky;
+      float: right;
+      top: 14vw;
+      right: 0%;
+      -webkit-transform: translate3d(0, 0, 0);
+      -moz-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+    .scroll__graphic.is-fixed {
+      position: fixed;
+    }
+    .scroll__graphic.is-bottom {
+      bottom: 0;
+      top: auto;
+    }
+    .scroll__graphic.chart {
+      position: absolute;
+      right: 1rem;
+      top: 50%;
+      -moz-transform: translateY(-50%);
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%);
+    }
+    .scroll__text {
+      padding: 0 1rem;
+      max-width: 15rem;
+    }
+    .step {
+      padding: 1rem;
+    }
+    .step.is-active {
+      opacity: 1;
+    }
+    .sticky {
+      position: -webkit-sticky;
+      position: sticky;
+    }
+    div.tooltip{
+      position: fixed;
+    }
+}

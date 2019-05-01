@@ -4,19 +4,22 @@
 <title>Jasper Croome</title>
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'vizzes/style.css' %}">
-<link href="https://fonts.googleapis.com/css?family=Eczar:400,600|Gentium+Basic" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
 <header class="header">
-    <p class="title">JC</p>
+    <div id="indexTitleBox"><p class="title"id="indexTitle">JC</p></div>
     <div class="linksbar">
-        <p class="headerlink"><a href="{% url 'vizzes:about' %}">About</a> | <a href="{% url 'vizzes:VizList' %}">Visualizations</a> | Home</p>
+        <p class="headerlink"><a id="aboutLink" href="{% url 'vizzes:about' %}" underline="#2980b9">About</a> | <a id="vizlistLink" href="{% url 'vizzes:VizList' %}">Visualizations</a> </p>
     </div> 
 </header>
 <div id="indexintro">
     <h1>Hi, I'm Jasper Croome.</h1>
-    <p>I'm a Solution Oriented Front-End Developer
-        <br>with a deep focus on
-        <br><a href="{% url 'vizzes:VizList' %}">Data Visualization</a>.</p>
+    <p>Design Oriented Front-End Developer with a deep focus on <a href="{% url 'vizzes:VizList' %}"style="white-space:nowrap">Data Visualization</a>.</p>
 </div>
-<div class="footer">
-    <p>email: <a href="mailto:jjcroome@gmail.com">jjcroome@gmail.com</a></p>
+<div id ="footercontactbar">
+    <div class="footercontactbutton empty"></div>
+    <div class="contactbutton email"><a href="mailto:jjcroome@gmail.com"target="_blank"><img src="{% static 'images/email_PNG15.png' %}"></a></div>
+    <div class="contactbutton linkedin"><a href="https://www.linkedin.com/in/jaspercroome/"target="_blank"><img src="{% static 'images/In-Blue-96.png' %}"alt="jasper's linkedin"></a></div>
+    <div class="contactbutton twitter"><a href="https://twitter.com/CrasperJoome"target="_blank"><img src="{% static 'images/Twitter_Logo_Blue.png' %}"alt="jasper's twitter"></a></div>
+    <div class="contactbutton github"><a href="https://github.com/Jasparr77"target="_blank"><img src="{% static 'images/GitHub-Mark-64px.png' %}"alt="jasper's GitHub"></a></div>
+    <div class="footercontactbutton empty"></div>
 </div>
