@@ -2,13 +2,13 @@
 This is in no particular order:
 [X] UX | font choice - let's switch to sans serif
 [X] Django | add icons to link to github, twitter, linkedin, email
+[X] Django | non-scrolly upload options 
+[X] Django | upload options for Tableau Public
 [X] CSS | responsive re-work
 [] JS | fix vizzes
 [] UX | logo design - something with the deep blue of the open ocean / mt hood sky?
 [] JS | landing page - gradients depending on time of day 
 [] Django | fix staticfiles mess
-[] Django | upload options for Tableau Public
-[] Django | non-scrolly upload options 
 [] Django | SEO - don't sell your soul, but see what can be done
 [] Github | share vanilla version with world
 [] Heroku | productionalize - jaspercroo.me, upgrade from free plan

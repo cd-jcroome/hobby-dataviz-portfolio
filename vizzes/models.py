@@ -22,7 +22,7 @@ class Dataviz(models.Model):
     date_added = models.DateTimeField('Date Added')
     viz_description = models.TextField(default='A brief Description of the Viz')
     viz_source = models.URLField(default='Data Source')
-    viz_file = models.CharField(max_length=1000, default='Paste CDN URL or TBX embed code here')
+    viz_file = models.TextField(max_length=1000, default='Paste CDN URL or Tableau Workbook and sheet name (e.g., "workbook/sheetname") here')
     viz_thumb = models.URLField(default='https://cdn.jsdelivr.net/gh/jasparr77/d3/[Folder]/[PNG File]')
     author = models.CharField(max_length=25, default='')
     class Meta:

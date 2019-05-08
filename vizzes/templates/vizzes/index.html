@@ -5,7 +5,7 @@
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'vizzes/style.css' %}">
 <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
-<header class="header">
+<header class="header"id="headerIndex">
     <div id="indexTitleBox"><p class="title"id="indexTitle">JC</p></div>
     <div class="linksbar">
         <p class="headerlink"><a id="aboutLink" href="{% url 'vizzes:about' %}" underline="#2980b9">About</a> | <a id="vizlistLink" href="{% url 'vizzes:VizList' %}">Visualizations</a> </p>
@@ -13,9 +13,9 @@
 </header>
 <div id="indexintro">
     <h1>Hi, I'm Jasper Croome.</h1>
-    <p>Design Oriented Front-End Developer with a deep focus on <a href="{% url 'vizzes:VizList' %}"style="white-space:nowrap">Data Visualization</a>.</p>
+    <p>I'm a Design Oriented Front-End Developer with a deep focus on <a href="{% url 'vizzes:VizList' %}"><button id="indexCTA">Data Visualization</button></a>.</p>
 </div>
-<div id ="footercontactbar">
+<div class ="footerContactBar">
     <div class="footercontactbutton empty"></div>
     <div class="contactbutton email"><a href="mailto:jjcroome@gmail.com"target="_blank"><img src="{% static 'images/email_PNG15.png' %}"></a></div>
     <div class="contactbutton linkedin"><a href="https://www.linkedin.com/in/jaspercroome/"target="_blank"><img src="{% static 'images/In-Blue-96.png' %}"alt="jasper's linkedin"></a></div>
