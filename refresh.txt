@@ -9,7 +9,6 @@ This is in no particular order:
 [] UX | logo design - something with the deep blue of the open ocean / mt hood sky?
 [] JS | landing page - gradients depending on time of day 
 [] Django | fix staticfiles mess
-[] Django | SEO - don't sell your soul, but see what can be done
 [] Github | share vanilla version with world
 [] Heroku | productionalize - jaspercroo.me, upgrade from free plan
 [] Heroku | probably remove your password & secret key from github

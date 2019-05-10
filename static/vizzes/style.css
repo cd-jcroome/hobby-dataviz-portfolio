@@ -373,6 +373,10 @@
   object.tableauViz{
     width:100%;
   }
+  #staticBody{
+    position: fixed;
+    top:50px;
+  }
 
 /*
 Desktop layouut 
@@ -475,17 +479,15 @@ Desktop layouut
     position: relative;
     top: 10vh;
     display: grid;
-      grid-template-columns: 5vw 45vw 45vw 5vw;
+      grid-template-columns: 5vw 90vw 5vw;
       grid-template-rows:75vh;
-    color:black;
-    background-color: white;
     overflow: scroll;
   }
   #aboutbody h2{
     font-family: 'Quicksand', 'sans-serif';
   }
   .aboutsite {
-    grid-column: 2/4;
+    grid-column: 2/3;
     grid-row: 1/2;
   }
   #aboutjasper {
@@ -499,42 +501,7 @@ Desktop layouut
   display: grid;
   }
 
-/* VizList */
-  div.vizlist-main {
-    position: relative;
-    top: 10vh;
-    margin: 5px;
-    display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      grid-gap:10px;
-      grid-auto-rows: 200px;
-    overflow: scroll;
-  }
-  div.vizCard {
-    justify-content: center;
-    display: grid;
-  }
-  a.vizLink {
-    grid-row: 1/3;
-    grid-column: 1/2;
-    display: grid;
-      grid-template: 100% 100%;
-      text-decoration: none;
-  }
-  img.vizThumb {
-    height: 100%;
-    width: 100%;
-    grid-row: 1/4;
-    grid-column: 1/2;
-    object-fit: cover;
-  }
-  div.vizTitle {
-    text-align: center;
-    transform: translate(0%, -100%);
-    background: slategray;
-    opacity: .75;
-    color: white;
-}
+/* VizList | same as mobile */
 
 /* viz detail page */
   .header p.vizVerbose {
@@ -550,44 +517,8 @@ Desktop layouut
     position: relative;
     top: 10vh;
   }
-  .scroll__graphic {
-    position: -webkit-sticky;
-    position: sticky;
-    float: right;
-    top: 14vw;
-    right: 0%;
-    -webkit-transform: translate3d(0, 0, 0);
-    -moz-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-  .scroll__graphic.is-fixed {
-    position: fixed;
-  }
-  .scroll__graphic.is-bottom {
-    bottom: 0;
-    top: auto;
-  }
-  .scroll__graphic.chart {
-    position: absolute;
-    right: 1rem;
-    top: 50%;
-    -moz-transform: translateY(-50%);
-    -webkit-transform: translateY(-50%);
-    transform: translateY(-50%);
-  }
-  .scroll__text {
-    padding: 0 1rem;
-    max-width: 15rem;
-  }
-  .step {
-    padding: 1rem;
-  }
-  .step.is-active {
-    opacity: 1;
-  }
-  .sticky {
-    position: -webkit-sticky;
-    position: sticky;
+  #staticBody{
+    top:10vh;
   }
   div.tooltip{
     position: fixed;

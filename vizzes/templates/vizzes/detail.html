@@ -19,11 +19,11 @@
                <div class="scroll__text"></div>
           </section>
           <div class="footer">
+               <script src="{% static 'vizzes/js/d3.v4.min.js' %}"></script>
                <script src="{% static 'vizzes/js/resize.js' %}"></script>
                <script src="{% static 'vizzes/js/intersection-observer.0-5.js' %}"></script>
                <script src="https://unpkg.com/scrollama"></script>
                <script src="https://russellgoldenberg.github.io/scrollama/stickyfill.min.js"></script>
-               <script src="{% static 'vizzes/js/d3.v4.min.js' %}"></script>
                <script src="{% static 'vizzes/js/d3.topojson.v2.min.js' %}"></script>
                <script type="text/javascript" src="{{ selected_dataviz.viz_file }}"></script>
                <p>Added to DB {{ selected_dataviz.date_added }}  <a href="{{ selected_dataviz.viz_source }}"target="_blank">data source</a></p> 
@@ -37,10 +37,10 @@
               <div class="footercontactbutton empty"></div>
           </div>            
      {% elif selected_dataviz.viz_type == 'D3T' %}
-          <div class="body"></div>
+          <div id="staticBody"></div>
           <div class="footer">
-               <script src="{% static 'vizzes/js/resize.js' %}"></script>
                <script src="{% static 'vizzes/js/d3.v4.min.js' %}"></script>
+               <script src="{% static 'vizzes/js/resize.js' %}"></script>
                <script src="{% static 'vizzes/js/d3.topojson.v2.min.js' %}"></script>
                <script type="text/javascript" src="{{ selected_dataviz.viz_file }}"></script>
                <p>Added to DB {{ selected_dataviz.date_added}}  <a href="{{ selected_dataviz.viz_source }}"target="_blank">data source</a></p> 

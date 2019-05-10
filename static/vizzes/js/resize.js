@@ -25,6 +25,13 @@ function resize() {
         .style("height",(height-(headerHeight+vizDescHeight+footerHeight))+"px")
         .style("width",width+"px")
 
+
+    // Static D3 resize
+    body = d3.select("#staticBody")
+
+    body
+        .style("top",(vizDescHeight+headerHeight)+"px")
+        .style("width",(width)+"px")
 };
 
 resize()
