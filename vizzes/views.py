@@ -14,9 +14,9 @@ import json
 
 class VizListView(generic.ListView):
     template_name = 'vizzes/VizList.html'
-    context_object_name = 'latest_viz_list'
+    context_object_name = 'viz_list'
     def get_queryset(self):
-        return Dataviz.objects.order_by('-date_added')[:5]
+        return Dataviz.objects.order_by('-date_added')[0:]
     
 class VizView(generic.DetailView):
     model = Dataviz

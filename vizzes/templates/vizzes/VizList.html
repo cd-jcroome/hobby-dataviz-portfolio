@@ -12,7 +12,7 @@
     </div>
 </header>
 <div class="vizlist-main">
-    {% for dataviz in latest_viz_list %}
+    {% for dataviz in viz_list %}
         <div class="vizCard">
             <a class="vizLink" href="{% url 'vizzes:viz' dataviz.id %}">
                 <img class="vizThumb" src="{{dataviz.viz_thumb}}">
