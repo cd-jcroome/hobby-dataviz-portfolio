@@ -17,42 +17,9 @@
           <section id="scroll">
                <div class="scroll__graphic sticky"><svg class="chart"></svg></div>
                <div class="scroll__text"></div>
-          </section>
-          <div class="footer">
-               <script src="{% static 'vizzes/js/d3.v4.min.js' %}"></script>
-               <script src="{% static 'vizzes/js/resize.js' %}"></script>
-               <script src="{% static 'vizzes/js/intersection-observer.0-5.js' %}"></script>
-               <script src="https://unpkg.com/scrollama"></script>
-               <script src="https://russellgoldenberg.github.io/scrollama/stickyfill.min.js"></script>
-               <script src="{% static 'vizzes/js/d3.topojson.v2.min.js' %}"></script>
-               <script type="text/javascript" src="{{ selected_dataviz.viz_file }}"></script>
-               <p>Added to DB {{ selected_dataviz.date_added }}  <a href="{{ selected_dataviz.viz_source }}"target="_blank">data source</a></p> 
-          </div>   
-          <div class ="footerContactBar">
-              <div class="footercontactbutton empty"></div>
-              <div class="footercontactbutton email"><a href="mailto:jjcroome@gmail.com"target="_blank"><img src="{% static 'images/email_PNG15.png' %}"></a></div>
-              <div class="footercontactbutton linkedin"><a href="https://www.linkedin.com/in/jaspercroome/"target="_blank"><img src="{% static 'images/In-Blue-96.png' %}"alt="jasper's linkedin"></a></div>
-              <div class="footercontactbutton twitter"><a href="https://twitter.com/CrasperJoome"target="_blank"><img src="{% static 'images/Twitter_Logo_Blue.png' %}"alt="jasper's twitter"></a></div>
-              <div class="footercontactbutton github"><a href="https://github.com/Jasparr77"target="_blank"><img src="{% static 'images/GitHub-Mark-64px.png' %}"alt="jasper's GitHub"></a></div>
-              <div class="footercontactbutton empty"></div>
-          </div>            
+          </section>           
      {% elif selected_dataviz.viz_type == 'D3T' %}
           <div id="staticBody"></div>
-          <div class="footer">
-               <script src="{% static 'vizzes/js/d3.v4.min.js' %}"></script>
-               <script src="{% static 'vizzes/js/resize.js' %}"></script>
-               <script src="{% static 'vizzes/js/d3.topojson.v2.min.js' %}"></script>
-               <script type="text/javascript" src="{{ selected_dataviz.viz_file }}"></script>
-               <p>Added to DB {{ selected_dataviz.date_added}}  <a href="{{ selected_dataviz.viz_source }}"target="_blank">data source</a></p> 
-          </div>
-          <div class ="footerContactBar">
-              <div class="footercontactbutton empty"></div>
-              <div class="footercontactbutton email"><a href="mailto:jjcroome@gmail.com"target="_blank"><img src="{% static 'images/email_PNG15.png' %}"></a></div>
-              <div class="footercontactbutton linkedin"><a href="https://www.linkedin.com/in/jaspercroome/"target="_blank"><img src="{% static 'images/In-Blue-96.png' %}"alt="jasper's linkedin"></a></div>
-              <div class="footercontactbutton twitter"><a href="https://twitter.com/CrasperJoome"target="_blank"><img src="{% static 'images/Twitter_Logo_Blue.png' %}"alt="jasper's twitter"></a></div>
-              <div class="footercontactbutton github"><a href="https://github.com/Jasparr77"target="_blank"><img src="{% static 'images/GitHub-Mark-64px.png' %}"alt="jasper's GitHub"></a></div>
-              <div class="footercontactbutton empty"></div>
-          </div>
      {% elif selected_dataviz.viz_type == 'TBX' %}
           <div class='tableauPlaceholder'>
                <object class='tableauViz'>
@@ -64,28 +31,26 @@
                     <param name='filter' value='iframeSizedToWindow=true' />
                </object>
           </div>
-          <div class ="footerContactBar">
-              <div class="footercontactbutton empty"></div>
-              <div class="footercontactbutton email"><a href="mailto:jjcroome@gmail.com"target="_blank"><img src="{% static 'images/email_PNG15.png' %}"></a></div>
-              <div class="footercontactbutton linkedin"><a href="https://www.linkedin.com/in/jaspercroome/"target="_blank"><img src="{% static 'images/In-Blue-96.png' %}"alt="jasper's linkedin"></a></div>
-              <div class="footercontactbutton twitter"><a href="https://twitter.com/CrasperJoome"target="_blank"><img src="{% static 'images/Twitter_Logo_Blue.png' %}"alt="jasper's twitter"></a></div>
-              <div class="footercontactbutton github"><a href="https://github.com/Jasparr77"target="_blank"><img src="{% static 'images/GitHub-Mark-64px.png' %}"alt="jasper's GitHub"></a></div>
-              <div class="footercontactbutton empty"></div>
-          </div>
-          <div class="footer">
-               <script type='text/javascript' src='https://10ax.online.tableau.com/javascripts/api/viz_v1.js'></script>
-               <script src="{% static 'vizzes/js/d3.v4.min.js' %}"></script>
-               <script src="{% static 'vizzes/js/resize.js' %}"></script>
-               <p>Added to DB {{ selected_dataviz.date_added }}  <a href="{{ selected_dataviz.viz_source }}"target="_blank">data source</a></p> 
-          </div>
      {% elif selected_dataviz.viz_type == 'IMG' %}
-          <div class="pictureBox"><img src="{{ selected_dataviz.viz_file }}"></div>  
-          <div class="footer">
-               <p>Added to DB {{ selected_dataviz.date_added }}  <a href="{{ selected_dataviz.viz_source }}"target="_blank">data source</a></p> 
-          </div>
+          <div class="pictureBox"><img src="{{ selected_dataviz.viz_file }}"></div>
      {% elif selected_dataviz.viz_type == 'WRD' %}
           <div class="wordBox"><p src="{{ selected_dataviz.viz_file }}"></p></div>
-          <div class="footer">
-               <p>Added to DB {{ selected_dataviz.date_added }}  <a href="{{ selected_dataviz.viz_source }}"target="_blank">data source</a></p> 
-          </div>
-     {% endif %}
+     {% endif %}   
+     <div class ="footerContactBar">
+         <div class="footercontactbutton empty"></div>
+         <div class="footercontactbutton email"><a href="mailto:jjcroome@gmail.com"target="_blank"><img src="{% static 'images/email_PNG15.png' %}"></a></div>
+         <div class="footercontactbutton linkedin"><a href="https://www.linkedin.com/in/jaspercroome/"target="_blank"><img src="{% static 'images/In-Blue-96.png' %}"alt="jasper's linkedin"></a></div>
+         <div class="footercontactbutton twitter"><a href="https://twitter.com/CrasperJoome"target="_blank"><img src="{% static 'images/Twitter_Logo_Blue.png' %}"alt="jasper's twitter"></a></div>
+         <div class="footercontactbutton github"><a href="https://github.com/Jasparr77"target="_blank"><img src="{% static 'images/GitHub-Mark-64px.png' %}"alt="jasper's GitHub"></a></div>
+         <div class="footercontactbutton empty"></div>
+     </div> 
+     <div class="footer">
+          <script src="{% static 'vizzes/js/d3.v4.min.js' %}"></script>
+          <script src="{% static 'vizzes/js/resize.js' %}"></script>
+          <script src="{% static 'vizzes/js/intersection-observer.0-5.js' %}"></script>
+          <script src="https://unpkg.com/scrollama"></script>
+          <script src="https://russellgoldenberg.github.io/scrollama/stickyfill.min.js"></script>
+          <script src="{% static 'vizzes/js/d3.topojson.v2.min.js' %}"></script>
+          <script type="text/javascript" src="{{ selected_dataviz.viz_file }}"></script>
+          <p>Added to DB {{ selected_dataviz.date_added }}  <a href="{{ selected_dataviz.viz_source }}"target="_blank">data source</a></p> 
+     </div>

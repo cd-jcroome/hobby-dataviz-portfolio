@@ -5,7 +5,8 @@ This is in no particular order:
 [X] Django | non-scrolly upload options 
 [X] Django | upload options for Tableau Public
 [X] CSS | responsive re-work
-[] JS | fix vizzes
+[] [] [] [] [] [] [X] [X] [] [X] JS | fix vizzes
+    
 [] UX | logo design - something with the deep blue of the open ocean / mt hood sky?
 [] JS | landing page - gradients depending on time of day 
 [] Django | fix staticfiles mess
