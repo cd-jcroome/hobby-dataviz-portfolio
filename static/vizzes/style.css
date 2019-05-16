@@ -507,7 +507,7 @@ Desktop layouut
   .header p.vizVerbose {
     position: absolute;
     left:10vh;
-    font-size: 5vw;
+    font-size: 3vw;
     margin: 5px;
   }
   .vizDesc{
