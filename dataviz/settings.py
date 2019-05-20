@@ -18,8 +18,7 @@ import dj_database_url
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-# with open('./secret_key.txt') as f:
-#     SECRET_KEY = f.read().strip()
+SECRET_KEY = os.getenv('SECRET_KEY', '###FU###')
 
 DEBUG = False
 
