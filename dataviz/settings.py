@@ -13,21 +13,17 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 import os
 import django_heroku
 import dj_database_url
+    
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+with open('./secret_key.txt') as f:
+    SECRET_KEY = f.read().strip()
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
+DEBUG = False
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'hniocwvaqn($r9az+g#)5qz!)&ko^k^7@+vgwlh(3=76v$^i%r'
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = ['.herokuapp.com']
+ALLOWED_HOSTS = ['.herokuapp.com','localhost']
 
 
 # Application definition
@@ -90,9 +86,21 @@ DATABASES = {
     }
 }
 
-# DATABASE_URL = os.environ['DATABASE_URL']
+# Security Settings
+SECURE_HSTS_SECONDS = 518400
+SECURE_HSTS_PRELOAD = True
 
-# conn = psycopg2.connect(DATABASE_URL, sslmode='require')
+SECURE_CONTENT_TYPE_NOSNIFF = True
+
+SECURE_BROWSER_XSS_FILTER = True
+
+SECURE_SSL_REDIRECT = True
+
+SESSION_COOKIE_SECURE = True
+
+CSRF_COOKIE_SECURE = True
+
+X_FRAME_OPTIONS = 'DENY'
 
 
 # Password validation
