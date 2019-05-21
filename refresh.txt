@@ -5,6 +5,7 @@ This is in no particular order:
 [X] Django | add icons to link to github, twitter, linkedin, email
 [X] Django | non-scrolly upload options 
 [X] Django | upload options for Tableau Public
+[X] Heroku | probably remove your password & secret key from github
 [X] CSS | responsive re-work
 [X] JS | fix vizzes
     [X] [X] [X] [X] [X] [X] [X] [X] [X] [X]     
@@ -15,5 +16,4 @@ This is in no particular order:
     [] readme
     [] present to group
 [] Heroku | productionalize - jaspercroo.me, upgrade from free plan
-[] Heroku | probably remove your password & secret key from github
 ------Done by Friday before Memorial Day (5/24)------
