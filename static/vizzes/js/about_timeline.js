@@ -56,7 +56,7 @@ function showTime(){
         .attr("y",function(d){return y(d.type);})
         .attr("height","60px")
         .attr("width","60px")
-        .attr("xlink:href",function(d){return "\"{% static 'images/"+d.logo+" %}\"";})
+        .attr("xlink:href",function(d){return "\"/static/images/"+d.logo+"\"";})
         .attr("transform","translate(80,20)")
         //   hoveraction
           .on("mouseover", function(d) {
