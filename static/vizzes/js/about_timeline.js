@@ -3,7 +3,7 @@ function showTime(){
     parseTime = d3.timeParse("%B %Y");
     formatTime = d3.timeFormat("%B '%y")
 
-    d3.csv("https://gist.githubusercontent.com/Jasparr77/4f1f0fe8e08792dcf3cdf9ba089618b4/raw/e7d380122b0d9c505b76e569181cdc917ee4ccfa/aboutJasper.csv",function(data){
+    d3.tsv("https://gist.githubusercontent.com/Jasparr77/4f1f0fe8e08792dcf3cdf9ba089618b4/raw/c91410446c486cd3a068bbfc6905747918816402/aboutJasper.tsv",function(data){
 
         data.forEach(function(d) {    
             d.start = parseTime(d.start)
@@ -12,8 +12,8 @@ function showTime(){
 
         console.log("data: ",data)
 
-        vizSpace = main.append("svg")
-        .style("height","450px")
+        aboutViz = main.append("svg")
+        .style("height","350px")
         .style("width","800px")
 
         var div = d3.select(".aboutsite").append("div")
@@ -29,7 +29,7 @@ function showTime(){
 
         var y  = d3.scaleBand()
         .domain(['Skills','Focus','Work','Education'])
-        .range([400,0])
+        .range([300,0])
         var yAxis = d3.axisLeft(y).tickSizeOuter(0);
         
         var x = d3.scaleTime()
@@ -37,7 +37,7 @@ function showTime(){
         .range([0,700])
         var xAxis = d3.axisBottom(x).ticks(4).tickSizeOuter(0);
             
-        vizSpace.selectAll("rect").append("g")
+        aboutViz.selectAll("rect").append("g")
         .data(data).enter().append("rect")
             .attr("class",function(d){return d.type;})
             .attr("id",function(d){return "line ",d.name;})
@@ -48,7 +48,7 @@ function showTime(){
             .attr("width", function(d){ return x(d.finish)-x(d.start);})
             .attr("transform","translate(100,47.5)")
 
-        vizSpace.selectAll(".image").append("g")
+        aboutViz.selectAll(".image").append("g")
         .data(data).enter().append("image")
         .attr("class",function(d){return d.type;})
         .attr("id",function(d){ return d.logo; })
@@ -56,7 +56,7 @@ function showTime(){
         .attr("y",function(d){return y(d.type);})
         .attr("height","60px")
         .attr("width","60px")
-        .attr("xlink:href",function(d){return "../hobby-dataviz-portfolio/static/images/"+d.logo;})
+        .attr("xlink:href",function(d){return "{% static 'images/"+d.logo+" %}";})
         .attr("transform","translate(80,20)")
         //   hoveraction
           .on("mouseover", function(d) {
@@ -78,22 +78,23 @@ function showTime(){
                 .duration(500)
                 .style("opacity", 0);
         });
-          
 
-        vizSpace.append("g")
+        aboutViz.append("g")
         .attr("class","axis y")
         .attr("transform","translate(100,0)")
-        .attr("stroke","none")
-        .style("font-size","1.25vw")
+        .style("font-size","1vw")
         .style("font-family","Quicksand")
         .call(yAxis)
 
-        vizSpace.append("g")
+        aboutViz.append("g")
         .attr("class","axis x")
-        .attr("transform","translate(100,400)")
-        .style("font-size","1.25vw")
+        .attr("transform","translate(100,325)")
+        .style("font-size","1vw")
         .style("font-family","Quicksand")
         .call(xAxis)
+
+        aboutViz.selectAll(".domain")
+        .style("stroke","none")
 
     })
 }
