@@ -6,14 +6,14 @@ This is in no particular order:
 [X] Django | non-scrolly upload options 
 [X] Django | upload options for Tableau Public
 [X] Heroku | probably remove your password & secret key from github
-[X] CSS | responsive re-work
+[X] CSS | responsive re-work     
+[X] JS | about page - visualization of career path
 [X] JS | fix vizzes
-    [X] [X] [X] [X] [X] [X] [X] [X] [X] [X]     
-[] JS | about page - visualization of career path
+    [X] [X] [X] [X] [X] [X] [X] [X] [X] [X]
+------Done by Friday before Memorial Day (5/24)------
 [] JS | landing page - gradients depending on time of day
 [] Django | fix staticfiles mess
 [] Github | share vanilla version with world
     [] readme
     [] present to group
 [] Heroku | productionalize - jaspercroo.me, upgrade from free plan
-------Done by Friday before Memorial Day (5/24)------

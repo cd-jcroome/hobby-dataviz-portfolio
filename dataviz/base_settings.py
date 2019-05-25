@@ -13,16 +13,19 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 import os
 import django_heroku
 import dj_database_url
+import socket
     
+if socket.gethostname()=="iMac.local":
+    from .local_settings import * 
+else:
+    from .prod_settings import * 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SECRET_KEY = os.getenv('SECRET_KEY', '###FU###')
 
-DEBUG = False
-
-ALLOWED_HOSTS = ['.herokuapp.com','localhost']
+ALLOWED_HOSTS = ['.herokuapp.com']
 
 
 # Application definition
@@ -86,20 +89,7 @@ DATABASES = {
 }
 
 # Security Settings
-SECURE_HSTS_SECONDS = 518400
-SECURE_HSTS_PRELOAD = True
 
-SECURE_CONTENT_TYPE_NOSNIFF = True
-
-SECURE_BROWSER_XSS_FILTER = True
-
-SECURE_SSL_REDIRECT = True
-
-SESSION_COOKIE_SECURE = True
-
-CSRF_COOKIE_SECURE = True
-
-X_FRAME_OPTIONS = 'DENY'
 
 
 # Password validation
