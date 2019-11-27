@@ -1,75 +1,116 @@
 <!DOCTYPE html>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>VizLab</title>
 {% load static %}
-<link rel="stylesheet" type="text/css" href="{% static 'vizzes/style.css' %}">
-<link rel="shortcut icon"type="image/png"href="{%static 'images/favicon.ico' %}">
-<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
-<header class="header"id="headerVizDetail">
-     <a href="{% url 'vizzes:index' %}"><div id="vizdetailTitleBox"><p class="title"id="vizdetailTitle">JC</p></div></a>
-     <p class="vizVerbose">{{ selected_dataviz.viz_verbose_name }}</p> 
-     <div class="linksbar"> 
-          <a class="headerlink" href="{% url 'vizzes:VizList' %}">back</a>
-     </div>
+<link rel="stylesheet" type="text/css" href="{% static 'vizzes/style.css' %}" />
+<link
+  rel="shortcut icon"
+  type="image/png"
+  href="{%static 'images/favicon.ico' %}"
+/>
+<link
+  href="https://fonts.googleapis.com/css?family=Quicksand"
+  rel="stylesheet"
+/>
+<header class="header" id="headerVizDetail">
+  <a href="{% url 'vizzes:index' %}"
+    ><div id="vizdetailTitleBox">
+      <p class="title" id="vizdetailTitle">JC</p>
+    </div></a
+  >
+  <p class="vizVerbose">{{ selected_dataviz.viz_verbose_name }}</p>
+  <div class="linksbar">
+    <a class="headerlink" href="{% url 'vizzes:VizList' %}">back</a>
+  </div>
 </header>
 <h4 class="vizDesc">{{ selected_dataviz.viz_description }}</h4>
-{% if  selected_dataviz.viz_type == 'D3L' %}
-     <section id="scroll">
-          <div class="scroll__graphic sticky"><svg class="chart"></svg></div>
-          <div class="scroll__text"></div>
-     </section> 
-     <div class="footer">
-          <script src="{% static 'vizzes/js/d3.v5.min.js' %}"></script>
-          <script src="{% static 'vizzes/js/resize.js' %}"></script>
-          <script src="{% static 'vizzes/js/intersection-observer.0-5.js' %}"></script>
-          <script src="https://unpkg.com/scrollama"></script>
-          <script src="https://russellgoldenberg.github.io/scrollama/stickyfill.min.js"></script>
-          <script src="{% static 'vizzes/js/d3.topojson.v2.min.js' %}"></script>
-          <script type="text/javascript" src="{{ selected_dataviz.viz_file }}"></script>
-          <p>Added to DB {{ selected_dataviz.date_added }}  <a href="{{ selected_dataviz.viz_source }}"target="_blank">data source</a></p> 
-     </div>           
+{% if selected_dataviz.viz_type == 'D3L' %}
+<section id="scroll">
+  <div class="scroll__graphic sticky"><svg class="chart"></svg></div>
+  <div class="scroll__text"></div>
+</section>
+<div class="footer">
+  <script src="{% static 'vizzes/js/d3.v5.min.js' %}"></script>
+  <script src="{% static 'vizzes/js/resize.js' %}"></script>
+  <script src="{% static 'vizzes/js/intersection-observer.0-5.js' %}"></script>
+  <script src="https://unpkg.com/scrollama"></script>
+  <script src="https://russellgoldenberg.github.io/scrollama/stickyfill.min.js"></script>
+  <script src="{% static 'vizzes/js/d3.topojson.v2.min.js' %}"></script>
+  <script type="text/javascript" src="{{ selected_dataviz.viz_file }}"></script>
+  <p>
+    Added to DB {{ selected_dataviz.date_added }}
+    <a href="{{ selected_dataviz.viz_source }}" target="_blank">data source</a>
+  </p>
+</div>
 {% elif selected_dataviz.viz_type == 'D3T' %}
-     <div id="staticBody"></div> 
-     <div class="footer">
-          <script src="{% static 'vizzes/js/d3.v4.min.js' %}"></script>
-          <script src="{% static 'vizzes/js/resize.js' %}"></script>
-          <script src="{% static 'vizzes/js/d3.topojson.v2.min.js' %}"></script>
-          <script type="text/javascript" src="../../../static/vizzes/js/midiParser.js"></script>
-          <script type="text/javascript" src="../../../static/vizzes/js/main.js"></script>
-          <script type="text/javascript" src="../../../static/vizzes/js/songShape.js"></script>
-          <p>Added to DB {{ selected_dataviz.date_added }}  <a href="{{ selected_dataviz.viz_source }}"target="_blank">data source</a></p> 
-     </div>
+<div id="staticBody"></div>
+<div class="footer">
+  <script src="{% static 'vizzes/js/d3.v5.min.js' %}"></script>
+  <script src="{% static 'vizzes/js/resize.js' %}"></script>
+  <script src="{% static 'vizzes/js/d3.topojson.v2.min.js' %}"></script>
+  <script
+    type="text/javascript"
+    src="../../../static/vizzes/js/midiParser.js"
+  ></script>
+  <script
+    type="text/javascript"
+    src="../../../static/vizzes/js/main.js"
+  ></script>
+  <script
+    type="text/javascript"
+    src="../../../static/vizzes/js/songShape.js"
+  ></script>
+  <p>
+    Added to DB {{ selected_dataviz.date_added }}
+    <a href="{{ selected_dataviz.viz_source }}" target="_blank">data source</a>
+  </p>
+</div>
 {% elif selected_dataviz.viz_type == 'TBX' %}
-     <div class='tableauPlaceholder'>
-          <object class='tableauViz'>
-               <param name='host_url' value='https%3A%2F%2F10ax.online.tableau.com%2F' />
-               <param name='embed_code_version' value='3' /> 
-               <param name='site_root' value='&#47;t&#47;jasperdevdev358361' />
-               <param name='name' value='{{ selected_dataviz.viz_file }}' /><param name='tabs' value='no' />
-               <param name='toolbar' value='yes' />
-               <param name='showAppBanner' value='false' />
-               <param name='filter' value='iframeSizedToWindow=true' />
-          </object>
-     </div> 
-     <div class="footer">
-          <script type='text/javascript' src='https://10ax.online.tableau.com/javascripts/api/viz_v1.js'></script>
-          <script src="{% static 'vizzes/js/d3.v4.min.js' %}"></script>
-          <script src="{% static 'vizzes/js/resize.js' %}"></script>
-          <p>Added to DB {{ selected_dataviz.date_added }}  <a href="{{ selected_dataviz.viz_source }}"target="_blank">data source</a></p> 
-     </div>
+<div class="tableauPlaceholder">
+  <object class="tableauViz">
+    <param name="host_url" value="https%3A%2F%2F10ax.online.tableau.com%2F" />
+    <param name="embed_code_version" value="3" />
+    <param name="site_root" value="&#47;t&#47;jasperdevdev358361" />
+    <param name="name" value="{{ selected_dataviz.viz_file }}" /><param
+      name="tabs"
+      value="no"
+    />
+    <param name="toolbar" value="yes" />
+    <param name="showAppBanner" value="false" />
+    <param name="filter" value="iframeSizedToWindow=true" />
+  </object>
+</div>
+<div class="footer">
+  <script
+    type="text/javascript"
+    src="https://10ax.online.tableau.com/javascripts/api/viz_v1.js"
+  ></script>
+  <script src="{% static 'vizzes/js/d3.v4.min.js' %}"></script>
+  <script src="{% static 'vizzes/js/resize.js' %}"></script>
+  <p>
+    Added to DB {{ selected_dataviz.date_added }}
+    <a href="{{ selected_dataviz.viz_source }}" target="_blank">data source</a>
+  </p>
+</div>
 {% elif selected_dataviz.viz_type == 'IMG' %}
-     <div class="pictureBox"><img src="{{ selected_dataviz.viz_file }}"></div> 
-     <div class="footer">
-          <script src="{% static 'vizzes/js/d3.v4.min.js' %}"></script>
-          <script src="{% static 'vizzes/js/resize.js' %}"></script>
-          <p>Added to DB {{ selected_dataviz.date_added }}  <a href="{{ selected_dataviz.viz_source }}"target="_blank">data source</a></p> 
-     </div>
+<div class="pictureBox"><img src="{{ selected_dataviz.viz_file }}" /></div>
+<div class="footer">
+  <script src="{% static 'vizzes/js/d3.v4.min.js' %}"></script>
+  <script src="{% static 'vizzes/js/resize.js' %}"></script>
+  <p>
+    Added to DB {{ selected_dataviz.date_added }}
+    <a href="{{ selected_dataviz.viz_source }}" target="_blank">data source</a>
+  </p>
+</div>
 {% elif selected_dataviz.viz_type == 'WRD' %}
-     <div class="wordBox"><p src="{{ selected_dataviz.viz_file }}"></p></div> 
-     <div class="footer">
-          <script src="{% static 'vizzes/js/d3.v4.min.js' %}"></script>
-          <script src="{% static 'vizzes/js/resize.js' %}"></script>
-          <p>Added to DB {{ selected_dataviz.date_added }}  <a href="{{ selected_dataviz.viz_source }}"target="_blank">data source</a></p> 
-     </div>
+<div class="wordBox"><p src="{{ selected_dataviz.viz_file }}"></p></div>
+<div class="footer">
+  <script src="{% static 'vizzes/js/d3.v4.min.js' %}"></script>
+  <script src="{% static 'vizzes/js/resize.js' %}"></script>
+  <p>
+    Added to DB {{ selected_dataviz.date_added }}
+    <a href="{{ selected_dataviz.viz_source }}" target="_blank">data source</a>
+  </p>
+</div>
 {% endif %}
