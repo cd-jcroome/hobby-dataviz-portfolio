@@ -14,11 +14,15 @@ import os
 import django_heroku
 import dj_database_url
 import socket
-    
-if socket.gethostname()=="iMac.local":
-    from .local_settings import * 
+
+print(socket.gethostname())
+
+if socket.gethostname()=="iMac":
+    from .local_settings import *
+    print("hey, you're also using local settings.")
 else:
     from .prod_settings import * 
+    print("hey, you're also using prod settings.")
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))

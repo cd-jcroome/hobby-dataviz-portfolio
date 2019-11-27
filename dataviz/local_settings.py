@@ -3,7 +3,7 @@ Local-specific settings.
 Maintain high-protection prod settings while 
 enabling rapid development on your local.
 """
-from .base_settings import *
+# from .base_settings import *
 
 DEBUG = True
 

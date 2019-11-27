@@ -10,7 +10,8 @@ This is in no particular order:
 [X] JS | about page - visualization of career path
 [X] JS | fix vizzes
     [X] [X] [X] [X] [X] [X] [X] [X] [X] [X]
-------Done by Friday before Memorial Day (5/24)------
+------^^^^Done by Friday before Memorial Day (5/24)^^^^------
+------vvvv---Not sure when I'll do these ones.-----vvvv------
 [] JS | landing page - gradients depending on time of day
 [] Django | fix staticfiles mess
 [] Github | share vanilla version with world
