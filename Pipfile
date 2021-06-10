@@ -8,7 +8,7 @@ pylint = "*"
 
 [packages]
 psycopg2 = "*"
-django = "==2.2.10"
+django = "==2.2.24"
 pandas = "*"
 gunicorn = "*"
 django-heroku = "*"
